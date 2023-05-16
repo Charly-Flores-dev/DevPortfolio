@@ -1,0 +1,86 @@
+/* Estilos para la caja */
+.caja {
+	width: 100px;
+	height: 100px;
+	background-color: red;
+	position: relative;
+	animation: mover 2s ease-in-out infinite;
+}
+
+/* Animación */
+@keyframes mover {
+	0% {
+		left: 0;
+	}
+	50% {
+		left: 200px;
+	}
+	100% {
+		left: 0;
+	}
+}
+/* Estilos para el menú */
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #333;
+  position: fixed;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  transition: top 0.3s ease-in-out;
+}
+
+.menu.active {
+  top: 0;
+}
+
+.menu li {
+  margin: 1rem;
+  text-align: center;
+}
+
+.menu a {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.menu a:hover {
+  color: #ccc;
+}
+
+/* Estilos para el botón de menú */
+.toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #333;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.toggle i {
+  font-size: 1.5rem;
+  color: #fff;
+  transition: transform 0.3s ease-in-out;
+}
+
+.toggle.active i {
+  transform: rotate(90deg);
+}
