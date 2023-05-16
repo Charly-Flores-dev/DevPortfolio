@@ -1,3 +1,20 @@
+  /* Estilos generales */
+
+    /* Estilos para el modo claro */
+    body {
+      background-color: #ffffff;
+      color: #000000;
+    }
+
+    /* Estilos para el modo oscuro */
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: #000000;
+        color: #ffffff;
+      }
+    }
+  
+
 /* Estilos generales */
 * {
 	box-sizing: border-box;
