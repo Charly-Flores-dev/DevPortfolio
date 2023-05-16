@@ -210,20 +210,20 @@
   
   /* Animación de la barra de habilidades */
   
-  .porcentaje[data-porcentaje="90"] {
-	width: 90%;
+  .porcentaje[data-porcentaje="60"] {
+	width: 60%;
   }
   
-  .porcentaje[data-porcentaje="80"] {
-	width: 80%;
+  .porcentaje[data-porcentaje="60"] {
+	width: 60%;
   }
   
-  .porcentaje[data-porcentaje="85"] {
-	width: 85%;
+  .porcentaje[data-porcentaje="40"] {
+	width: 40%;
   }
   
-  .porcentaje[data-porcentaje="75"] {
-	width: 75%;
+  .porcentaje[data-porcentaje="30"] {
+	width: 30%;
   }
 
 
