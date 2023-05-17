@@ -102,7 +102,7 @@
   /* Sección de inicio */
   .inicio {
 	height: 100vh;
-	background-image: url("https://unsplash.com/es/fotos/XJXWbfSo2f0");
+	background-image: url("https://unsplash.com/es/fotos/XJXWbfSo2f0?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink");
 	background-position: center;
 	background-size: cover;
 	display: flex;
