@@ -1,3 +1,11 @@
+const toggleButton = document.querySelector('.toggle');
+
+toggleButton.addEventListener('click', () => {
+  document.body.classList.toggle('dark-mode');
+});
+
+
+
 // Obtener el botón de menú y la lista de opciones del menú
 const toggleButton = document.querySelector('.toggle');
 const menuList = document.querySelector('.menu');
