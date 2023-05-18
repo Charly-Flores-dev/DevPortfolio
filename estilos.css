@@ -1,103 +1,134 @@
  /* Estilos generales */
 * {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-	font-family: Arial, sans-serif;
-	font-size: 16px;
-	line-height: 1.5;
-	color: #333;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
 }
+
+
+/*modo nocturno*/
+body {
+  background-color: #fff; 
+  color: #333; 
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark-mode {
+  background-color: #333; /* Color de fondo oscuro */
+  color: #fff; /* Color de texto claro */
+}
+
+/* Otros estilos específicos del modo nocturno */
+.dark-mode .menu a {
+  color: #fff;
+}
+
+.dark-mode .menu a:hover {
+  color: #ccc;
+}
+
+.dark-mode .toggle i {
+  color: #fff;
+}
+
 
 /* Barra de navegación */
 nav {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	background-color: #fff;
-	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-	padding: 10px 20px;
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
 }
 
 .logo {
-	display: flex;
-	align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .logo img {
-	width: 50px;
-	height: auto;
-	margin-right: 10px;
+  width: 50px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.logo span {
+  font-weight: bold;
 }
 
 .menu {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  display: flex;
+}
+
+.menu ul {
+  list-style: none;
+  display: flex;
 }
 
 .menu li {
-	list-style: none;
-	margin-left: 20px;
+  margin-left: 20px;
 }
 
 .menu a {
-	display: block;
-	text-decoration: none;
-	font-size: 18px;
-	font-weight: bold;
-	color: #333;
-	padding: 10px;
-	transition: color 0.3s ease-in-out;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  padding: 10px;
+  transition: color 0.3s ease-in-out;
 }
 
 .menu a:hover {
-	color: #555;
+  color: #555;
 }
 
 .toggle {
-	display: none;
-	cursor: pointer;
-	font-size: 24px;
+  display: none;
+  cursor: pointer;
+  font-size: 24px;
 }
 
 /* Estilos para pantallas móviles */
 @media screen and (max-width: 768px) {
-	.menu {
-		display: none;
-	}
+  .menu {
+    display: none;
+  }
 
-	.toggle {
-		display: block;
-	}
+  .toggle {
+    display: block;
+  }
 
-	.menu.active {
-		display: flex;
-		flex-direction: column;
-		position: absolute;
-		top: 100%;
-		right: 0;
-		width: 100%;
-		background-color: #fff;
-		box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-		z-index: 998;
-	}
+  .menu.active {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+  }
 
-	.menu.active li {
-		margin-left: 0;
-	}
+  .menu.active ul {
+    flex-direction: column;
+    align-items: center;
+  }
 
-	.menu.active a {
-		color: #333;
-	}
+  .menu.active li {
+    margin: 10px 0;
+  }
+
+  .menu.active a {
+    color: #333;
+  }
 }
 
 
@@ -147,53 +178,6 @@ nav {
 	color: #333;
 }
 
-
-
-/* Sección de inicio */
-.inicio {
-	height: 100vh;
-	background-image: url("https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80");
-	background-position: center;
-	background-size: cover;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-.inicio .contenido {
-	text-align: center;
-}
-
-.inicio h1 {
-	font-size: 60px;
-	margin-bottom: 20px;
-	color: #fff;
-	text-shadow: 2px 2px 4px #fff;
-}
-
-.inicio p {
-	font-size: 20px;
-	margin-bottom: 20px;
-	max-width: 600px;
-	line-height: 1.6;
-	color: #fff;
-	text-shadow: 2px 2px 4px #fff;
-}
-
-.boton {
-	display: inline-block;
-	background-color: #333;
-	color: #fff;
-	padding: 10px 20px;
-	border-radius: 5px;
-	text-decoration: none;
-	transition: all 0.3s ease;
-}
-
-.boton:hover {
-	background-color: #fff;
-	color: #333;
-}
 
   
 /* Sección "Acerca de" */
