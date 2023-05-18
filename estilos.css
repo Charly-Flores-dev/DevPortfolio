@@ -25,76 +25,88 @@
 	color: #333;
   }
   
-  /* Barra de navegación */
-  nav {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	background-color: #333;
-	color: #fff;
-	padding: 10px;
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	z-index: 999;
-  }
-  
-  .logo {
-	font-size: 24px;
-  }
-  
+ /* Barra de navegación */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.logo h4 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu li {
+  list-style: none;
+  margin-left: 20px;
+}
+
+.menu a {
+  display: block;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  padding: 10px;
+  transition: color 0.3s ease-in-out;
+}
+
+.menu a:hover {
+  color: #555;
+}
+
+.toggle {
+  display: none;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+/* Estilos para pantallas móviles */
+@media screen and (max-width: 768px) {
   .menu {
-	display: flex;
-	list-style: none;
+    display: none;
   }
-  
-  .menu li:not(:last-child) {
-	margin-right: 20px;
-  }
-  
-  .menu a {
-	color: #fff;
-	text-decoration: none;
-	padding: 5px;
-	transition: all 0.3s ease;
-  }
-  
-  .menu a:hover {
-	background-color: #fff;
-	color: #333;
-  }
-  
+
   .toggle {
-	display: none;
+    display: block;
   }
-  
-  /* Estilos para pantallas móviles */
-  @media screen and (max-width: 768px) {
+
   .menu.active {
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 100%; 
+    top: 100%;
     left: 0;
     width: 100%;
     background-color: #fff;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
     z-index: 998;
   }
-  
-	.menu li {
-	  margin: 0;
-	}
-  
-	.toggle {
-	  display: block;
-	  font-size: 24px;
-	  cursor: pointer;
-	  padding: 10px;
-	  color: #fff;
-	}
+
+  .menu.active li {
+    margin-left: 0;
   }
+
+  .menu.active a {
+    color: #333;
+  }
+}
   
   /* Sección de inicio */
   .inicio {
