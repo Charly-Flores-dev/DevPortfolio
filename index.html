@@ -106,12 +106,23 @@
 <section id="contacto">
   <div class="contenedor">
     <h2>Contacto</h2>
-    <form action="enviar.php" method="post">
-      <input type="text" name="nombre" placeholder="Nombre" required>
-      <input type="email" name="email" placeholder="Email" required>
-      <textarea name="mensaje" placeholder="Mensaje" required></textarea>
-      <input type="submit" value="Enviar">
-    </form>
+  
+<form
+  action="https://formspree.io/f/mgebqqoo"
+  method="POST"
+>
+  <label>
+    Your email:
+    <input type="email" name="email">
+  </label>
+  <label>
+    Your message:
+    <textarea name="message"></textarea>
+  </label>
+  <!-- your other form fields go here -->
+  <button type="submit">Enviar</button>
+</form>
+    
     <div class="contacto-info">
       <div><img src="https://www.svgrepo.com/show/504557/maps.svg" alt="Ubicación"><span>Saltillo, Coahuila, México</span></div>
       <div><img src="https://www.svgrepo.com/show/478293/smartphone-free.svg" alt="Teléfono"><span>+52 844 594 5341</span></div>
