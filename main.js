@@ -36,3 +36,16 @@ toggle.addEventListener('click', () => {
   menu.classList.toggle('active');
   toggle.classList.toggle('active');
 });
+// Función para desplegar el menú en versión móvil
+function toggleMenu() {
+  var menu = document.getElementById("menu");
+  if (menu.style.display === "block") {
+    menu.style.display = "none";
+  } else {
+    menu.style.display = "block";
+  }
+}
+
+// Evento de click en el icono de menú
+var toggle = document.getElementById("toggle");
+toggle.addEventListener("click", toggleMenu);
