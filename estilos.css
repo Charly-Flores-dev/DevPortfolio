@@ -117,7 +117,8 @@
   .inicio h1 {
 	font-size: 60px;
 	margin-bottom: 20px;
-	text-shadow: 2px 2px 4px #ffffff;
+	color: blue;
+	text-shadow: 2px 2px 4px #fff;
   }
   
   .inicio p {
@@ -126,6 +127,7 @@
 	max-width: 600px;
 	line-height: 1.6;
 	color: #fff;
+	text-shadow: 2px 2px 4px #fff;
   }
   
   .boton {
