@@ -40,10 +40,15 @@ nav {
   z-index: 999;
 }
 
-.logo h4 {
-  font-size: 24px;
-  font-weight: bold;
-  color: #333;
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 50px; 
+  height: auto;
+  margin-right: 10px; 
 }
 
 .menu {
