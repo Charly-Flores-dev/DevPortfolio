@@ -117,7 +117,7 @@
   .inicio h1 {
 	font-size: 60px;
 	margin-bottom: 20px;
-	text-shadow: 2px 2px 4px #000;
+	text-shadow: 2px 2px 4px #ffffff;
   }
   
   .inicio p {
@@ -125,6 +125,7 @@
 	margin-bottom: 20px;
 	max-width: 600px;
 	line-height: 1.6;
+	color: #fff;
   }
   
   .boton {
