@@ -48,21 +48,3 @@ toggle.addEventListener('click', () => {
   menu.classList.toggle('active');
   toggle.classList.toggle('active');
 });
-// Obtener el elemento del contador de visitas
-const visitCountElement = document.getElementById('visitCount');
-
-// Obtener el número de visitas almacenado en el localStorage
-let visitCount = localStorage.getItem('visitCount');
-
-// Verificar si el número de visitas existe en el localStorage
-if (visitCount) {
-  visitCount = parseInt(visitCount) + 1;
-} else {
-  visitCount = 1;
-}
-
-// Guardar el número de visitas actualizado en el localStorage
-localStorage.setItem('visitCount', visitCount);
-
-// Mostrar el número de visitas en el elemento del contador
-visitCountElement.textContent = visitCount;
