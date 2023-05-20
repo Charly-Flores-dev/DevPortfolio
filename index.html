@@ -2,65 +2,199 @@
 <html lang="es">
   <head>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-
+    
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-235XB3XMLP"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-235XB3XMLP"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-  gtag('config', 'G-235XB3XMLP');
-  gtag('config', 'G-235XB3XMLP');
-   </script>
 
+      gtag('config', 'G-235XB3XMLP');
+      
+   </script>
+   <script>
+   // Obtener el botón de menú y la lista de opciones del menú
+const toggleButton = document.querySelector('.toggle');
+const menuList = document.querySelector('.menu');
+
+// Función para mostrar u ocultar la lista de opciones del menú
+const toggleMenu = () => {
+  menuList.classList.toggle('active');
+}
+
+// Agregar un event listener al botón de menú para mostrar u ocultar la lista de opciones del menú
+toggleButton.addEventListener('click', toggleMenu);
+
+// Agregar un event listener a todos los enlaces de la lista de opciones del menú para cerrar la lista de opciones del menú al hacer clic en ellos
+menuList.querySelectorAll('a').forEach((link) => {
+  link.addEventListener('click', toggleMenu);
+});
+
+// Obtener todas las barras de habilidades y animarlas
+const skillBars = document.querySelectorAll('.porcentaje');
+skillBars.forEach((bar) => {
+  const percentage = bar.dataset.porcentaje;
+  bar.style.width = `${percentage}%`;
+});
+
+// Obtener el elemento de la caja y cambiar el color al hacer clic
+const caja = document.querySelector('.caja');
+caja.addEventListener('click', () => {
+  caja.style.backgroundColor = 'blue';
+});
+
+// Seleccionar el botón de menú y el menú
+const toggle = document.getElementById('toggle');
+const menu = document.getElementById('menu');
+
+// Función para abrir y cerrar el menú
+const toggleMenuMobile = () => {
+  menu.classList.toggle('active');
+  toggle.classList.toggle('active');
+};
+
+// Agregar un evento al botón de menú para abrir y cerrar el menú
+toggle.addEventListener('click', toggleMenuMobile);
+</script>
+
+    
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="https://th.bing.com/th/id/OIP.V72SO3bdBYkq7Y_k9xGc-AAAAA?pid=ImgDet&rs=1" type="image/x-icon">
-    <title>Portafolio de Carlos Flores</title>
     <title>Dev-Portafolio Charlie Flores</title>
     <link rel="stylesheet" href="estilos.css">
-    <script src="main.js"></script>
+   
   </head>
   <body>
-
-<!-- Barra de navegación   https://th.bing.com/th/id/R.a36c22434fa8dfb3a8e7dd0b54cdce5a?rik=INW1xIogpxXWZw&riu=http%3a%2f%2fwww.100pies.net%2fGifs%2fAnimales%2fPanteras%2fpantera01.gif&ehk=01hYQ2S8nnfXIvyJ6u33g0HN%2bSBF4UojO7BUmshmNbU%3d&risl=&pid=ImgRaw&r=0-->
-
+    
+<!-- Barra de navegación,https://th.bing.com/th/id/R.c9c4abb603affbf2b3a09e8fd866a0a2?rik=4C81%2b2DZgidCPg&riu=http%3a%2f%2fwww.100pies.net%2fgifs%2fAnimales%2fPanteras%2fpantera10.gif&ehk=9xpXGQSoD5BuqQ%2b%2fEs7%2f1%2bwPSLSpd2bWOiPgQT91l4U%3d&risl=&pid=ImgRaw&r=0" alt="Pantera   ,https://th.bing.com/th/id/R.a36c22434fa8dfb3a8e7dd0b54cdce5a?rik=INW1xIogpxXWZw&riu=http%3a%2f%2fwww.100pies.net%2fGifs%2fAnimales%2fPanteras%2fpantera01.gif&ehk=01hYQ2S8nnfXIvyJ6u33g0HN%2bSBF4UojO7BUmshmNbU%3d&risl=&pid=ImgRaw&r=0-->
+    
 <div class="logo">
   <img src="https://th.bing.com/th/id/R.6ec7823da7f6327081a3b78c18f6fe78?rik=bf6iiVD1xzd4bg&riu=http%3a%2f%2fwww.gifde.com%2fjs_pics_aux%2fdescarga.php%3fdescarga%3dsi%26c%3dgif%2fotros%2fnaturaleza%2fanimales%2fmamiferos%2fpanteras%2f%26f%3dpantera-001.gif&ehk=fXPRvuXdz57aWodwnl%2bup4Vw18u%2fCQRtGuNRm0GHprc%3d&risl=&pid=ImgRaw&r=0">
   <h4>{Charlie^Flores}</h4>
+<nav class="menu">
+  <input type="checkbox" id="menu-toggle" />
+  <label for="menu-toggle" class="menu-icon"><i class="fas fa-bars"></i></label>
+  <ul class="menu-items">
+    <li><a href="#inicio">Inicio</a></li>
+    <li><a href="#acerca-de">Acerca de</a></li>
+    <li><a href="#habilidades">Habilidades</a></li>
+    <li><a href="#proyectos">Proyectos</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+</nav>
 </div>
- <nav>
-  <ul class="menu">
-  <li><a href="#inicio">Inicio</a></li>
-@@ -33,6 +35,7 @@ <h4>{Charlie^Flores}</h4>
-  <li><a href="#proyectos">Proyectos</a></li>
-  <li><a href="#contacto">Contacto</a></li>
-</ul>
-</div>
-      <div class="toggle">
-        <i class="fas fa-bars"></i>
+   
+
+    <!-- Sección de inicio -->
+    <section id="inicio" class="inicio">
+      <div class="contenido">
+        <h1>Bienvenido a mi portafolio</h1>
+        <p>¡Hola! Soy Carlos Flores,originario de Saltillo,Coahuila, estudiante de ingenieria en desarrollo de software. Me apasiona el mundo de la tecnología y me gusta trabajar en proyectos desafiantes que me permitan seguir aprendiendo y creciendo como profesional.</p>
+        <a href="#contacto" class="boton">Contacto</a>
       </div>
-@@ -91,9 +94,10 @@ <h3>Python</h3>
+    </section>
+
+    <!-- Sección "Acerca de" -->
+    <section id="acerca-de" class="acerca-de">
+      <div class="contenido">
+        <h2>Acerca de mí</h2>
+        <p>Soy un desarrollador de software apasionado por la tecnología. Me gusta mantenerme actualizado en las últimas tendencias y herramientas de programación, y siempre estoy buscando nuevas formas de mejorar mis habilidades.</p>
+        <p>Estudio Ingeniería en Desarrollo de Software en la <a href="https://www.uane.edu.mx/">Universidad Autónoma del Noreste (UANE)</a>.</p>
+        <a href="#contacto" class="boton">Contacto</a>
+      </div>
+    </section>
+
+    <!-- Sección "Habilidades" -->
+<section id="habilidades" class="habilidades">
+  <div class="contenido">
+    <h2>Habilidades</h2>
+    <div class="habilidad">
+      <h3>HTML</h3>
+      <div class="barra">
+        <div class="porcentaje" data-porcentaje="60"></div>
+      </div>
+    </div>
+    <div class="habilidad">
+      <h3>CSS</h3>
+      <div class="barra">
+        <div class="porcentaje" data-porcentaje="60"></div>
+      </div>
+    </div>
+    <div class="habilidad">
+      <h3>JavaScript</h3>
+      <div class="barra">
+        <div class="porcentaje" data-porcentaje="40"></div>
+      </div>
+    </div>
+    <div class="habilidad">
+      <h3>Python</h3>
+      <div class="barra">
+        <div class="porcentaje" data-porcentaje="30"></div>
+      </div>
+    </div>
+  </div>
+</section>
+    
     <!-- Sección "Proyectos" -->
 
 
-<p>Aquí encontaras los proyectos en los cuales estoy trabajando o las ideas que estoy por empezar en el mundo de la programación.</p>
 
-
+ 
 <section id="proyectos" class="proyectos">
   <p>Aquí encontaras los proyectos en los cuales estoy trabajando o las ideas que estoy por empezar en el mundo de la programación.</p>
   <div class="contenido">
     <h2>Proyectos</h2>
     <div class="proyecto">
-@@ -146,6 +150,5 @@ <h2>Contacto</h2>
+      <img src="imagen1.jpg" alt="Proyecto 1">
+      <h3>Proyecto 1</h3>
+      <p>Descripción del proyecto 1.</p>
+      <a href="proyecto1.html" class="boton">Ver más</a>
+    </div>
+    <div class="proyecto">
+      <img src="imagen2.jpg" alt="Proyecto 2">
+      <h3>Proyecto 2</h3>
+      <p>Descripción del proyecto 2.</p>
+      <a href="proyecto2.html" class="boton">Ver más</a>
+    </div>
+    <div class="proyecto">
+      <img src="imagen3.jpg" alt="Proyecto 3">
+      <h3>Proyecto 3</h3>
+      <p>Descripción del proyecto 3.</p>
+      <a href="proyecto3.html" class="boton">Ver más</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- Sección "Contacto" -->
+<section id="contacto">
+  <div class="contenedor">
+    <h2>Contacto</h2>
+  
+<form
+  action="https://formspree.io/f/mgebqqoo"
+  method="POST">
+  <input type="text" name="nombre" placeholder="Nombre" required>
+  <input type="email" name="email" placeholder="Email" required>
+  <textarea name="mensaje" placeholder="Mensaje" required></textarea>    
+  <input type="submit" value="Enviar">
+</form>
+    
+    <div class="contacto-info">
+      <div><img src="https://www.svgrepo.com/show/504557/maps.svg" alt="Ubicación"><span>Saltillo, Coahuila, México</span></div>
+      <div><img src="https://www.svgrepo.com/show/478293/smartphone-free.svg" alt="Teléfono"><span>+52 844 594 5341</span></div>
+      <div><img src="https://www.svgrepo.com/show/511921/email-1573.svg" alt="Email"><span>charlessflo23@gmail.com</span></div>
+    </div>
+  </div>
+</section>
+    
+<!-- Sección "Pie de página" Rev.05/23/0.1-->
+<footer>
+  <p>© 2023 Carlos Flores{Bph3k}</p>
   <p>Foto de <a href="https://unsplash.com/@lucabravo?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Luca Bravo</a> en <a href="https://unsplash.com/es/fotos/XJXWbfSo2f0?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   </p>
 </footer>
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </body>
 </html>
