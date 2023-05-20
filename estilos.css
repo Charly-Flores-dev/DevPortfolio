@@ -138,6 +138,22 @@ nav {
 
 
 /* Sección de inicio */
+/* Estilos CSS para la animación del texto */
+      .typing-animation {
+        overflow: hidden;
+        white-space: nowrap;
+        border-right: 0.15em solid;
+        animation: typing 4s steps(40) infinite;
+      }
+
+      @keyframes typing {
+        0% {
+          width: 0;
+        }
+        100% {
+          width: 100%;
+        }
+      }
 .inicio {
   height: 100vh;
   background-image: url("https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80");
