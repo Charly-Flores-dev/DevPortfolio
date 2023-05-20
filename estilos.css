@@ -130,6 +130,7 @@ nav {
   .proyectos .contenido {
     grid-template-columns: 1fr;
   }
+}
 
   #contacto .contenedor {
     grid-template-columns: 1fr;
