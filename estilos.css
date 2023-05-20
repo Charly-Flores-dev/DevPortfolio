@@ -276,11 +276,11 @@ width: 30%;
 }
 
 .proyectos .contenido {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: inline-flex;
+ /* grid-template-columns: repeat(3, 1fr);
   grid-gap: 30px;
-  margin-top: 30px;
-  justify-items: center; /* Centra horizontalmente las columnas */
+  margin-top: 30px;*/
+  justify-items: center;
 }
 
 .proyectos .proyecto {
@@ -319,8 +319,6 @@ width: 30%;
 .proyectos .proyecto .boton:hover {
   background-color: #666;
 }
-
-
 /* Sección "Contacto" */
 #contacto {
   background-color: #f2f2f2;
@@ -328,6 +326,7 @@ width: 30%;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column; 
 }
 
 #contacto .contenedor {
@@ -383,6 +382,8 @@ width: 30%;
 #contacto .contacto-info span {
   font-size: 16px;
 }
+
+
 
 
 /* Footer */
