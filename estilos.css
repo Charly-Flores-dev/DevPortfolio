@@ -20,11 +20,13 @@ body.dark-mode {
 }
 
 .dark-mode .menu a,
-.dark-mode .toggle i {
+.dark-mode .toggle i,
+.dark-mode .modo-toggle i {
   color: #fff;
 }
 
-.dark-mode .menu a:hover {
+.dark-mode .menu a:hover,
+.dark-mode .modo-toggle:hover i {
   color: #ccc;
 }
 
@@ -37,11 +39,13 @@ nav {
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
   padding: 10px 20px;
 }
+
 .logo h4 {
   font-size: 18px;
-  color: #333;
+  color: #fff;
   margin-left: 10px;
 }
+
 .logo {
   display: flex;
   align-items: center;
