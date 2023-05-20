@@ -362,25 +362,25 @@ line-height: 1.6;
 #contacto form input[type="submit"]:hover {
   background-color: #666;
 }
-
-#contacto .contacto-info {
+/*iconos de contacto*/
+.contacto-info {
   display: flex;
   flex-direction: column;
   gap: 20px;
   margin-top: 20px;
 }
 
-#contacto .contacto-info div {
+.contacto-info div {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-#contacto .contacto-info img {
+.contacto-info img {
   width: 24px;
 }
 
-#contacto .contacto-info span {
+.contacto-info span {
   font-size: 16px;
 }
 
