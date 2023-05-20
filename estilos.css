@@ -271,13 +271,14 @@ width: 30%;
 }
 
 .proyectos p {
-  font-size: 18px;
-  color: #333;
+font-size: 20px;
+margin-bottom: 20px;
+line-height: 1.6;
 }
 
 .proyectos .contenido {
   display: inline-flex;
- /* grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 30px;
   margin-top: 30px;*/
   justify-items: center;
