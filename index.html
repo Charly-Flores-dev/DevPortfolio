@@ -56,7 +56,28 @@ const toggleMenuMobile = () => {
 
 // Agregar un evento al botón de menú para abrir y cerrar el menú
 toggle.addEventListener('click', toggleMenuMobile);
+
+// Obtener el elemento del icono de luna
+const modoToggle = document.querySelector('.modo-toggle');
+const modoIcono = document.getElementById('modo-icono');
+
+// Agregar un evento de clic al icono de luna
+modoToggle.addEventListener('click', function() {
+  // Alternar la clase 'dark-mode' en el elemento <body>
+  document.body.classList.toggle('dark-mode');
+
+  // Cambiar el ícono de luna según el modo actual
+  if (document.body.classList.contains('dark-mode')) {
+    modoIcono.classList.remove('fa-moon');
+    modoIcono.classList.add('fa-sun');
+  } else {
+    modoIcono.classList.remove('fa-sun');
+    modoIcono.classList.add('fa-moon');
+  }
+});
+
 </script>
+
 
     
     <meta charset="UTF-8" />
@@ -71,9 +92,9 @@ toggle.addEventListener('click', toggleMenuMobile);
 <!-- Barra de navegación,https://th.bing.com/th/id/R.c9c4abb603affbf2b3a09e8fd866a0a2?rik=4C81%2b2DZgidCPg&riu=http%3a%2f%2fwww.100pies.net%2fgifs%2fAnimales%2fPanteras%2fpantera10.gif&ehk=9xpXGQSoD5BuqQ%2b%2fEs7%2f1%2bwPSLSpd2bWOiPgQT91l4U%3d&risl=&pid=ImgRaw&r=0" alt="Pantera   ,https://th.bing.com/th/id/R.a36c22434fa8dfb3a8e7dd0b54cdce5a?rik=INW1xIogpxXWZw&riu=http%3a%2f%2fwww.100pies.net%2fGifs%2fAnimales%2fPanteras%2fpantera01.gif&ehk=01hYQ2S8nnfXIvyJ6u33g0HN%2bSBF4UojO7BUmshmNbU%3d&risl=&pid=ImgRaw&r=0-->
     
 <div class="logo">
-  <img src="https://th.bing.com/th/id/R.6ec7823da7f6327081a3b78c18f6fe78?rik=bf6iiVD1xzd4bg&riu=http%3a%2f%2fwww.gifde.com%2fjs_pics_aux%2fdescarga.php%3fdescarga%3dsi%26c%3dgif%2fotros%2fnaturaleza%2fanimales%2fmamiferos%2fpanteras%2f%26f%3dpantera-001.gif&ehk=fXPRvuXdz57aWodwnl%2bup4Vw18u%2fCQRtGuNRm0GHprc%3d&risl=&pid=ImgRaw&r=0">
+ <nav class="menu">
+ <img src="https://th.bing.com/th/id/R.6ec7823da7f6327081a3b78c18f6fe78?rik=bf6iiVD1xzd4bg&riu=http%3a%2f%2fwww.gifde.com%2fjs_pics_aux%2fdescarga.php%3fdescarga%3dsi%26c%3dgif%2fotros%2fnaturaleza%2fanimales%2fmamiferos%2fpanteras%2f%26f%3dpantera-001.gif&ehk=fXPRvuXdz57aWodwnl%2bup4Vw18u%2fCQRtGuNRm0GHprc%3d&risl=&pid=ImgRaw&r=0">
   <h4>{Charlie^Flores}</h4>
-<nav class="menu">
   <input type="checkbox" id="menu-toggle" />
   <label for="menu-toggle" class="menu-icon"><i class="fas fa-bars"></i></label>
   <ul class="menu-items">
@@ -83,6 +104,15 @@ toggle.addEventListener('click', toggleMenuMobile);
     <li><a href="#proyectos">Proyectos</a></li>
     <li><a href="#contacto">Contacto</a></li>
   </ul>
+   <body>
+  <!-- Resto del contenido de la página -->
+
+  <!-- Icono de luna -->
+  <div class="modo-toggle">
+    <i id="modo-icono" class="far fa-moon"></i>
+  </div>
+</body>
+
 </nav>
 </div>
    
