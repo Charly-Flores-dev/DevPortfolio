@@ -88,13 +88,37 @@ toggle.addEventListener('click', toggleMenuMobile);
    
 
     <!-- Sección de inicio -->
-    <section id="inicio" class="inicio">
-      <div class="contenido">
-        <h1>Bienvenido a mi portafolio</h1>
-        <p>¡Hola! Soy Carlos Flores,originario de Saltillo,Coahuila, estudiante de ingenieria en desarrollo de software. Me apasiona el mundo de la tecnología y me gusta trabajar en proyectos desafiantes que me permitan seguir aprendiendo y creciendo como profesional.</p>
-        <a href="#contacto" class="boton">Contacto</a>
-      </div>
-    </section>
+  <h1>
+      <span class="typing-animation"
+        >Bienvenido a mi portafolio</span>
+   </h1>
+
+    <p>
+      <span class="typing-animation"
+        >¡Hola! Soy Carlos Flores, originario de Saltillo, Coahuila, estudiante de
+        ingeniería en desarrollo de software. Me apasiona el mundo de la
+        tecnología y me gusta trabajar en proyectos desafiantes que me permitan
+        seguir aprendiendo y creciendo como profesional.</span>
+    </p>
+   <script>
+      // Código JavaScript para animar el texto de escritura
+      const typingElements = document.querySelectorAll('.typing-animation');
+      typingElements.forEach((element) => {
+        const text = element.textContent;
+        element.textContent = '';
+        let currentCharIndex = 0;
+
+        function type() {
+          if (currentCharIndex < text.length) {
+            element.textContent += text[currentCharIndex];
+            currentCharIndex++;
+            setTimeout(type, 50);
+          }
+        }
+
+        type();
+      });
+    </script>
 
     <!-- Sección "Acerca de" -->
     <section id="acerca-de" class="acerca-de">
