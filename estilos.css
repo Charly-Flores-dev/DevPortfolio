@@ -126,7 +126,16 @@ nav {
   #menu-toggle:checked ~ .menu-items {
     display: flex;
   }
+
+  .proyectos .contenido {
+    grid-template-columns: 1fr;
+  }
+
+  #contacto .contenedor {
+    grid-template-columns: 1fr;
+  }
 }
+
 
 /* Sección de inicio */
 .inicio {
