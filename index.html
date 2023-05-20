@@ -14,7 +14,7 @@
       
    </script>
    <script>
-   // Obtener el botón de menú y la lista de opciones del menú
+    // Obtener el botón de menú y la lista de opciones del menú
 const toggleButton = document.querySelector('.toggle');
 const menuList = document.querySelector('.menu');
 
@@ -56,7 +56,13 @@ const toggleMenuMobile = () => {
 
 // Agregar un evento al botón de menú para abrir y cerrar el menú
 toggle.addEventListener('click', toggleMenuMobile);
-</script>
+
+// Agregar un event listener al botón de menú-toggle para mostrar u ocultar la lista de opciones del menú
+document.getElementById('menu-toggle').addEventListener('click', function() {
+  var menuItems = document.querySelector('.menu-items');
+  menuItems.style.display = menuItems.style.display === 'flex' ? 'none' : 'flex';
+});
+   </script>
 
     
     <meta charset="UTF-8" />
