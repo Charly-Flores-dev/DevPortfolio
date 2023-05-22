@@ -16,13 +16,16 @@
    <script>
 
 
-// Agregar un event listener al botón de menú para mostrar u ocultar la lista de opciones del menú
-toggleButton.addEventListener('click', toggleMenu);
+// Obtener los elementos del DOM
+const menuToggle = document.querySelector('.menu-toggle');
+const menuDropdown = document.querySelector('.menu-dropdown');
 
-     
-// Agregar un event listener a todos los enlaces de la lista de opciones del menú para cerrar la lista de opciones del menú al hacer clic en ellos
-menuList.querySelectorAll('a').forEach((link) => {
-  link.addEventListener('click', toggleMenu);
+// Agregar evento de clic al botón de alternancia
+menuToggle.addEventListener('click', () => {
+  // Alternar la clase 'active' al botón de alternancia
+  menuToggle.classList.toggle('active');
+  // Alternar la clase 'active' al menú desplegable
+  menuDropdown.classList.toggle('active');
 });
 
      
