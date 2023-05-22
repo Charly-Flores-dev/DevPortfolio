@@ -10,15 +10,18 @@ body {
 }
 
 /* Barra de navegación */
-nav {
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: #333;
   color: #fff;
   padding: 10px;
 }
 
-.logo {
-  display: flex;
-  line-height: normal;;
+.logo img {
+  width: 30px;
+  height: 30px;
 }
 
 .logo h4 {
@@ -27,77 +30,83 @@ nav {
   margin-left: 10px;
 }
 
-.menu {
-  display: flex;
-  flex-direction: column;
+.menu-items {
   list-style: none;
-  margin-top: 10px;
+  display: flex;
 }
 
-.menu-item {
-  margin-bottom: 10px;
+.menu-items li {
+  margin-left: 10px;
 }
 
-.menu-item a {
+.menu-items a {
   color: #fff;
   text-decoration: none;
   padding: 10px;
   transition: background-color 0.3s ease;
 }
 
-.menu-item a:hover {
+.menu-items a:hover {
   background-color: #555;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.menu-dropdown {
+  display: flex;
+  align-items: center;
+}
+
+.menu-dropdown.active {
+  display: none;
+}
+
+/* Icono de luna */
+.modo-toggle {
+  color: #fff;
+  cursor: pointer;
+}
+
+.modo-toggle i {
+  font-size: 20px;
 }
 
 /* Estilos para la versión móvil */
 @media (max-width: 768px) {
   .menu {
-    display: block;
+    flex-direction: column;
   }
 
   .menu-toggle {
     display: block;
-    color: #fff;
-    font-size: 20px;
-    cursor: pointer;
   }
 
-  .menu-toggle.active {
-    color: #ccc;
+  .menu-icon {
+    display: block;
   }
 
-  .menu-toggle:hover {
-    color: #ccc;
-  }
-
-  .menu-toggle .icon-bar {
-    width: 25px;
-    height: 3px;
-    background-color: #fff;
-    margin-bottom: 5px;
-    transition: background-color 0.3s ease;
-  }
-
-  .menu-toggle.active .icon-bar:nth-child(2) {
-    opacity: 0;
-  }
-
-  .menu-toggle.active .icon-bar:nth-child(1) {
-    transform: rotate(-45deg) translate(-5px, 5px);
-  }
-
-  .menu-toggle.active .icon-bar:nth-child(3) {
-    transform: rotate(45deg) translate(-5px, -5px);
-  }
-
-  .menu-dropdown {
+  .menu-items {
     display: none;
-    background-color: #333;
-    padding: 10px;
   }
 
   .menu-dropdown.active {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    background-color: #333;
+    padding: 10px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
   }
 
   .menu-dropdown a {
@@ -106,13 +115,13 @@ nav {
     text-decoration: none;
     padding: 10px;
     transition: background-color 0.3s ease;
-    cursor: pointer;
   }
 
   .menu-dropdown a:hover {
     background-color: #555;
   }
 }
+
 
  /* Sección de inicio */
 .inicio {
