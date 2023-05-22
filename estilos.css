@@ -242,125 +242,52 @@ nav {
   width: 30%;
   }
   
-  /* Sección proyectos */
-  .proyectos {
-	background-color: #f2f2f2;
-	padding: 50px;
-  }
-  
-  .proyectos p {
-  font-size: 20px;
-  margin-bottom: 20px;
-  line-height: 1.6;
-  }
-  
-  .proyectos .contenido {
-	display: inline-flex;
-	grid-template-columns: repeat(3, 1fr);
-	grid-gap: 30px;
-	margin-top: 30px;
-	justify-items: center;
-  }
-  
-  .proyectos .proyecto {
-	background-color: #fff;
-	padding: 20px;
-	border-radius: 5px;
-	text-align: center;
-  }
-  
-  .proyectos .proyecto img {
-	width: 100%;
-	border-radius: 5px;
-	margin-bottom: 20px;
-  }
-  
-  .proyectos .proyecto h3 {
-	font-size: 24px;
-	margin-bottom: 10px;
-  }
-  
-  .proyectos .proyecto p {
-	font-size: 16px;
-	color: #666;
-	margin-bottom: 20px;
-  }
-  
-  .proyectos .proyecto .boton {
-	display: inline-block;
-	padding: 10px 20px;
-	background-color: #333;
-	color: #fff;
-	text-decoration: none;
-	border-radius: 5px;
-  }
-  
-  .proyectos .proyecto .boton:hover {
-	background-color: #666;
-  }
-  /* Sección "Contacto" */
-  #contacto {
-	background-color: #f2f2f2;
-	padding: 50px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column; 
-  }
-  
-  #contacto .contenedor {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-gap: 30px;
-  }
-  
-  #contacto h2 {
-	font-size: 32px;
-	margin-bottom: 20px;
-  }
-  
-  #contacto form input,
-  #contacto form textarea {
-	width: 100%;
-	padding: 10px;
-	font-size: 16px;
-	margin-bottom: 20px;
-	border-radius: 5px;
-	border: 1px solid #ccc;
-	resize: none; 
-  }
-  
-  #contacto form input[type="submit"] {
-	background-color: #333;
-	color: #fff;
-	border: none;
-	cursor: pointer;
-  }
-  
-  #contacto form input[type="submit"]:hover {
-	background-color: #666;
-  }
-  /*iconos de contacto*/
-  .contacto-info {
-	display: flex;
-	flex-direction: column;
-	gap: 20px;
-	margin-top: 20px;
-  }
-  
-  .contacto-info div {
-	display: flex;
-	align-items: center;
-	gap: 10px;
-  }
-  
-  .contacto-info img {
-	width: 24px;
-  }
-  
-  .contacto-info span {
-	font-size: 16px;
-  }
+/* Sección proyectos */
+.proyectos {
+  background-color: #f2f2f2;
+  padding: 50px;
+  overflow: hidden; /* Agregamos un overflow para evitar desbordamientos */
+}
+
+.proyectos .contenido {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+  margin-top: 30px;
+}
+
+/* Ajustamos el tamaño de las imágenes en los proyectos */
+.proyectos .proyecto img {
+  width: 100%;
+  height: 200px; /* Ajusta la altura según tus necesidades */
+  object-fit: cover; /* Ajusta el tamaño de la imagen */
+}
+
+/* Sección "Contacto" */
+#contacto {
+  background-color: #f2f2f2;
+  padding: 50px;
+  overflow: hidden; /* Agregamos un overflow para evitar desbordamientos */
+}
+
+#contacto .contenedor {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 30px;
+}
+
+/* Ajustamos el ancho de los campos de entrada en el formulario de contacto */
+#contacto form input,
+#contacto form textarea {
+  width: 100%;
+  max-width: 400px; /* Limita el ancho máximo según tus necesidades */
+}
+
+/* Ajustamos el espacio entre los elementos de contacto */
+#contacto .contacto-info div {
+  margin-bottom: 10px;
+}
+
   
   /* Footer */
   footer {
@@ -383,3 +310,4 @@ nav {
   footer a:hover {
   text-decoration: underline;
   }
+/*Rev.05.22.04
