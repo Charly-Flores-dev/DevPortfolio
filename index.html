@@ -14,48 +14,54 @@
       
    </script>
    <script>
-   // Obtener el botón de menú y la lista de opciones del menú
-const toggleButton = document.querySelector('.toggle');
-const menuList = document.querySelector('.menu');
 
-// Función para mostrar u ocultar la lista de opciones del menú
-const toggleMenu = () => {
-  menuList.classList.toggle('active');
-}
 
 // Agregar un event listener al botón de menú para mostrar u ocultar la lista de opciones del menú
 toggleButton.addEventListener('click', toggleMenu);
 
+     
 // Agregar un event listener a todos los enlaces de la lista de opciones del menú para cerrar la lista de opciones del menú al hacer clic en ellos
 menuList.querySelectorAll('a').forEach((link) => {
   link.addEventListener('click', toggleMenu);
 });
 
+     
 // Obtener todas las barras de habilidades y animarlas
-const skillBars = document.querySelectorAll('.porcentaje');
-skillBars.forEach((bar) => {
-  const percentage = bar.dataset.porcentaje;
-  bar.style.width = `${percentage}%`;
+function llenarBarras() {
+  const barras = document.querySelectorAll('.porcentaje');
+  
+  barras.forEach(barra => {
+    const porcentaje = barra.getAttribute('data-porcentaje');
+    barra.style.width = `${porcentaje}%`;
+  });
+}
+
+// Verificar si el usuario ha llegado a la sección de habilidades
+window.addEventListener('scroll', () => {
+  const habilidadesSection = document.querySelector('.habilidades');
+  const habilidadesTop = habilidadesSection.offsetTop;
+  const habilidadesHeight = habilidadesSection.offsetHeight;
+  const scrollTop = window.pageYOffset;
+  const windowHeight = window.innerHeight;
+  
+  if (scrollTop > habilidadesTop - windowHeight + habilidadesHeight) {
+    llenarBarras();
+    window.removeEventListener('scroll', llenarBarras); // Remover el evento para evitar ejecuciones adicionales
+  }
 });
 
+
+     
 // Obtener el elemento de la caja y cambiar el color al hacer clic
 const caja = document.querySelector('.caja');
 caja.addEventListener('click', () => {
   caja.style.backgroundColor = 'blue';
 });
 
-// Seleccionar el botón de menú y el menú
-const toggle = document.getElementById('toggle');
-const menu = document.getElementById('menu');
 
-// Función para abrir y cerrar el menú
-const toggleMenuMobile = () => {
-  menu.classList.toggle('active');
-  toggle.classList.toggle('active');
-};
 
-// Agregar un evento al botón de menú para abrir y cerrar el menú
-toggle.addEventListener('click', toggleMenuMobile);
+
+
 
 // Obtener el elemento del icono de luna
 const modoToggle = document.querySelector('.modo-toggle');
@@ -137,35 +143,28 @@ modoToggle.addEventListener('click', function() {
     </section>
 
     <!-- Sección "Habilidades" -->
-<section id="habilidades" class="habilidades">
-  <div class="contenido">
-    <h2>Habilidades</h2>
-    <div class="habilidad">
-      <h3>HTML</h3>
-      <div class="barra">
-        <div class="porcentaje" data-porcentaje="60"></div>
-      </div>
-    </div>
-    <div class="habilidad">
-      <h3>CSS</h3>
-      <div class="barra">
-        <div class="porcentaje" data-porcentaje="60"></div>
-      </div>
-    </div>
-    <div class="habilidad">
-      <h3>JavaScript</h3>
-      <div class="barra">
-        <div class="porcentaje" data-porcentaje="40"></div>
-      </div>
-    </div>
-    <div class="habilidad">
-      <h3>Python</h3>
-      <div class="barra">
-        <div class="porcentaje" data-porcentaje="30"></div>
-      </div>
-    </div>
+    
+<div class="habilidad">
+  <h3>Habilidad 1</h3>
+  <div class="barra">
+    <div class="porcentaje" data-porcentaje="60"></div>
   </div>
-</section>
+</div>
+
+<div class="habilidad">
+  <h3>Habilidad 2</h3>
+  <div class="barra">
+    <div class="porcentaje" data-porcentaje="40"></div>
+  </div>
+</div>
+
+<div class="habilidad">
+  <h3>Habilidad 3</h3>
+  <div class="barra">
+    <div class="porcentaje" data-porcentaje="30"></div>
+  </div>
+</div>
+
     
     <!-- Sección "Proyectos" -->
 
