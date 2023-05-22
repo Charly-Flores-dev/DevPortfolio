@@ -52,7 +52,7 @@ nav {
 /* Estilos para la versión móvil */
 @media (max-width: 768px) {
   .menu {
-    display: none;
+    display: block;
   }
 
   .menu-toggle {
