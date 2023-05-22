@@ -14,8 +14,6 @@
       
    </script>
    <script>
-
-
 // Obtener los elementos del DOM
 const menuToggle = document.querySelector('.menu-toggle');
 const menuDropdown = document.querySelector('.menu-dropdown');
@@ -28,11 +26,10 @@ menuToggle.addEventListener('click', () => {
   menuDropdown.classList.toggle('active');
 });
 
-     
 // Obtener todas las barras de habilidades y animarlas
 function llenarBarras() {
   const barras = document.querySelectorAll('.porcentaje');
-  
+
   barras.forEach(barra => {
     const porcentaje = barra.getAttribute('data-porcentaje');
     barra.style.width = `${porcentaje}%`;
@@ -40,31 +37,26 @@ function llenarBarras() {
 }
 
 // Verificar si el usuario ha llegado a la sección de habilidades
-window.addEventListener('scroll', () => {
+function verificarHabilidades() {
   const habilidadesSection = document.querySelector('.habilidades');
   const habilidadesTop = habilidadesSection.offsetTop;
   const habilidadesHeight = habilidadesSection.offsetHeight;
   const scrollTop = window.pageYOffset;
   const windowHeight = window.innerHeight;
-  
+
   if (scrollTop > habilidadesTop - windowHeight + habilidadesHeight) {
     llenarBarras();
-    window.removeEventListener('scroll', llenarBarras); // Remover el evento para evitar ejecuciones adicionales
+    window.removeEventListener('scroll', verificarHabilidades); // Remover el evento para evitar ejecuciones adicionales
   }
-});
+}
 
+window.addEventListener('scroll', verificarHabilidades);
 
-     
 // Obtener el elemento de la caja y cambiar el color al hacer clic
 const caja = document.querySelector('.caja');
 caja.addEventListener('click', () => {
   caja.style.backgroundColor = 'blue';
 });
-
-
-
-
-
 
 // Obtener el elemento del icono de luna
 const modoToggle = document.querySelector('.modo-toggle');
@@ -85,7 +77,10 @@ modoToggle.addEventListener('click', function() {
   }
 });
 
-</script>
+
+
+
+  </script>
 
 
     
@@ -113,14 +108,12 @@ modoToggle.addEventListener('click', function() {
     <li><a href="#proyectos">Proyectos</a></li>
     <li><a href="#contacto">Contacto</a></li>
   </ul>
-   <body>
-  <!-- Resto del contenido de la página -->
+ 
 
   <!-- Icono de luna -->
   <div class="modo-toggle">
     <i id="modo-icono" class="far fa-moon"></i>
   </div>
-</body>
 
 </nav>
 </div>
@@ -145,36 +138,43 @@ modoToggle.addEventListener('click', function() {
       </div>
     </section>
 
-    <!-- Sección "Habilidades" -->
+ 
     
+<!-- Sección "Habilidades" -->
+
 <div class="habilidad">
-  <h3>Habilidad 1</h3>
+  <h3>HTML</h3>
   <div class="barra">
     <div class="porcentaje" data-porcentaje="60"></div>
   </div>
 </div>
 
 <div class="habilidad">
-  <h3>Habilidad 2</h3>
+  <h3>CSS</h3>
   <div class="barra">
     <div class="porcentaje" data-porcentaje="40"></div>
   </div>
 </div>
 
 <div class="habilidad">
-  <h3>Habilidad 3</h3>
+  <h3>JavaScript</h3>
+  <div class="barra">
+    <div class="porcentaje" data-porcentaje="30"></div>
+  </div>
+</div>
+    
+<div class="habilidad">
+  <h3>Python</h3>
   <div class="barra">
     <div class="porcentaje" data-porcentaje="30"></div>
   </div>
 </div>
 
+
     
     <!-- Sección "Proyectos" -->
-
-
-
- 
-<section id="proyectos" class="proyectos">
+  
+  <section id="proyectos" class="proyectos">
   <p>Aquí encontaras los proyectos en los cuales estoy trabajando o las ideas que estoy por empezar en el mundo de la programación.</p>
   <h2>Proyectos</h2>
   <div class="contenido">
