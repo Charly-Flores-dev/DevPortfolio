@@ -154,7 +154,7 @@ body {
 .inicio h1 {
   font-size: 60px;
   margin-bottom: 20px;
-  color: black;
+  color: #1E90FF;
   text-shadow: 2px 2px 4px #fff;
 }
 
@@ -166,7 +166,7 @@ body {
   max-width: 600px;
   line-height: 1.6;
   color: #1E90FF;
-  text-shadow: 2px 2px 4px #000;
+  text-shadow: 2px 2px 4px #fff;
 }
 
 .boton {
