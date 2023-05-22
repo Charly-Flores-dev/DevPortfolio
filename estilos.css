@@ -189,6 +189,8 @@ nav {
   
   /* Sección "Habilidades" */
 
+
+
 .barra {
   height: 10px;
   background-color: #ddd;
@@ -218,6 +220,18 @@ nav {
   color: #007aff;
 }
 
+  /* Animación de la barra de habilidades */
+  .porcentaje[data-porcentaje="60"] {
+  width: 60%;
+  }
+  
+  .porcentaje[data-porcentaje="40"] {
+  width: 40%;
+  }
+  
+  .porcentaje[data-porcentaje="30"] {
+  width: 30%;
+  }
   
 /* Sección proyectos */
 .proyectos {
