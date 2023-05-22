@@ -233,10 +233,10 @@ nav {
   margin-top: 30px;
 }
 
-/* Ajustamos el tamaño de las imágenes en los proyectos */
+/* Ajuste el tamaño de las imágenes en los proyectos */
 .proyectos .proyecto img {
   width: 100%;
-  height: 200px; /* Ajusta la altura según tus necesidades */
+  height: 200px; /* Ajusto la altura según  necesidades */
   object-fit: cover; /* Ajusta el tamaño de la imagen */
 }
 
@@ -244,7 +244,7 @@ nav {
 #contacto {
   background-color: #f2f2f2;
   padding: 50px;
-  overflow: hidden; /* Agregamos un overflow para evitar desbordamientos */
+  overflow: hidden; /* Agrege un overflow para evitar desbordamientos */
 }
 
 #contacto .contenedor {
@@ -253,17 +253,35 @@ nav {
   grid-gap: 30px;
 }
 
-/* Ajustamos el ancho de los campos de entrada en el formulario de contacto */
+/* Ajuste el ancho de los campos de entrada en el formulario de contacto */
 #contacto form input,
 #contacto form textarea {
   width: 100%;
-  max-width: 400px; /* Limita el ancho máximo según tus necesidades */
+  max-width: 400px; /* Limita el ancho máximo según  necesidades */
 }
 
-/* Ajustamos el espacio entre los elementos de contacto */
-#contacto .contacto-info div {
+/* Ajuste el espacio entre los elementos de contacto */
+#contacto  div {
   margin-bottom: 10px;
 }
+
+.contacto-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contacto-info div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contacto-info img {
+  width: 24px;
+}
+
+
 
   
   /* Footer */
