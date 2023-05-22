@@ -18,7 +18,7 @@ nav {
 
 .logo {
   display: flex;
-  align-items: center;
+  line-height: normal;;
 }
 
 .logo h4 {
@@ -106,6 +106,7 @@ nav {
     text-decoration: none;
     padding: 10px;
     transition: background-color 0.3s ease;
+    cursor: pointer;
   }
 
   .menu-dropdown a:hover {
@@ -115,8 +116,8 @@ nav {
 
   /* Sección de inicio */
   .inicio {
-	height: 100vh;
-	background-image: url("https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80");
+  height: 100vh;
+  background-image: url("https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80");
   background-position: center;
   background-size: cover;
   display: flex;
@@ -228,12 +229,28 @@ nav {
 .porcentaje::after {
   content: attr(data-porcentaje) "%";
   position: absolute;
-  right: -30px;
-  top: -20px;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: bold;
   color: #007aff;
+  background-color: white;
+  padding: 4px;
+  border-radius: 4px;
 }
+
+.porcentaje[data-porcentaje='100']::after {
+  right: 0;
+  bottom: 0;
+}
+
+.porcentaje[data-porcentaje='0']::after {
+  left: 0;
+  bottom: 0;
+}
+
+.porcentaje[data-porcentaje='100'], .porcentaje[data-porcentaje='0'] {
+  position: relative;
+}
+
 
   /* Animación de la barra de habilidades */
   .porcentaje[data-porcentaje="60"] {
@@ -303,10 +320,12 @@ nav {
   display: flex;
   align-items: center;
   gap: 10px;
+  cursor: pointer
 }
 
 .contacto-info img {
   width: 24px;
+  cursor: pointer
 }
 
 
@@ -323,7 +342,7 @@ nav {
   
   footer p {
   margin: 0;
-  font-size: 14px;
+  font-size: 15px;
   }
   
   footer a {
