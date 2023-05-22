@@ -14,17 +14,47 @@
       
    </script>
    <script>
-// Obtener los elementos del DOM
-const menuToggle = document.querySelector('.menu-toggle');
-const menuDropdown = document.querySelector('.menu-dropdown');
+document.addEventListener("DOMContentLoaded", function () {
+  // Obtener elementos del DOM
+  var menuToggle = document.getElementById("menu-toggle");
+  var menuIcon = document.querySelector(".menu-icon");
+  var menuDropdown = document.querySelector(".menu-dropdown");
+  var modoIcono = document.getElementById("modo-icono");
+  var modoToggle = document.querySelector(".modo-toggle");
 
-// Agregar evento de clic al botón de alternancia
-menuToggle.addEventListener('click', () => {
-  // Alternar la clase 'active' al botón de alternancia
-  menuToggle.classList.toggle('active');
-  // Alternar la clase 'active' al menú desplegable
-  menuDropdown.classList.toggle('active');
+  // Manejar el evento de cambio en el interruptor de menú
+  menuToggle.addEventListener("change", function () {
+    if (menuToggle.checked) {
+      menuDropdown.classList.add("active");
+    } else {
+      menuDropdown.classList.remove("active");
+    }
+  });
+
+  // Manejar el evento de clic en el icono de menú
+  menuIcon.addEventListener("click", function () {
+    menuToggle.checked = !menuToggle.checked;
+    if (menuToggle.checked) {
+      menuDropdown.classList.add("active");
+    } else {
+      menuDropdown.classList.remove("active");
+    }
+  });
+
+  // Manejar el evento de clic en el icono de modo
+  modoToggle.addEventListener("click", function () {
+    if (modoIcono.classList.contains("fa-moon")) {
+      modoIcono.classList.remove("fa-moon");
+      modoIcono.classList.add("fa-sun");
+      document.body.classList.add("dark-mode");
+    } else {
+      modoIcono.classList.remove("fa-sun");
+      modoIcono.classList.add("fa-moon");
+      document.body.classList.remove("dark-mode");
+    }
+  });
 });
+
 
 // Obtener todas las barras de habilidades y animarlas
 function llenarBarras() {
