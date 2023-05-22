@@ -115,7 +115,7 @@ nav {
 }
 
   /* Sección de inicio */
-  .inicio {
+.inicio {
   height: 100vh;
   background-image: url("https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80");
   background-position: center;
@@ -123,7 +123,7 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  }
+}
   
   .inicio .contenido {
   text-align: center;
@@ -136,14 +136,30 @@ nav {
   text-shadow: 2px 2px 4px #fff;
   }
   
-  .inicio p {
+/* Efecto de vidrio para el párrafo */
+.inicio::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  pointer-events: none;
+}
+
+/* Estilo del párrafo */
+.inicio p {
+  position: relative;
+  z-index: 1;
   font-size: 20px;
   margin-bottom: 20px;
   max-width: 600px;
   line-height: 1.6;
   color: #1E90FF;
   text-shadow: 2px 2px 4px #fff;
-  }
+}
   
   .boton {
   display: inline-block;
@@ -220,8 +236,8 @@ nav {
   background-color: #007aff;
   border-radius: 5px;
   position: absolute;
-  top: 0;
-  left: 0;
+  top: -1;
+  left: -1;
   width: 0;
   transition: width 1s ease;
 }
@@ -233,18 +249,18 @@ nav {
   font-weight: bold;
   color: #007aff;
   background-color: white;
-  padding: 4px;
-  border-radius: 4px;
+  padding: 5px;
+  border-radius: 5px;
 }
 
 .porcentaje[data-porcentaje='100']::after {
-  right: 0;
-  bottom: 0;
+  right: -1;
+  bottom: -1;
 }
 
 .porcentaje[data-porcentaje='0']::after {
-  left: 0;
-  bottom: 0;
+  left: -1;
+  bottom: -1;
 }
 
 .porcentaje[data-porcentaje='100'], .porcentaje[data-porcentaje='0'] {
