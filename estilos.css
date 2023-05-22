@@ -115,6 +115,7 @@ nav {
 }
 
   /* Sección de inicio */
+/* Sección de inicio */
 .inicio {
   height: 100vh;
   background-image: url("https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80");
@@ -124,20 +125,20 @@ nav {
   justify-content: center;
   align-items: center;
 }
-  
-  .inicio .contenido {
+
+.inicio .contenido {
   text-align: center;
-  }
-  
-  .inicio h1 {
+}
+
+.inicio h1 {
   font-size: 60px;
   margin-bottom: 20px;
-  color: #1E90FF;
+  color: black;
   text-shadow: 2px 2px 4px #fff;
-  }
-  
+}
+
 /* Efecto de vidrio para el párrafo */
-.inicio::after {
+.inicio p::after {
   content: "";
   position: absolute;
   top: 0;
@@ -158,10 +159,10 @@ nav {
   max-width: 600px;
   line-height: 1.6;
   color: #1E90FF;
-  text-shadow: 2px 2px 4px #fff;
+  text-shadow: 2px 2px 4px #000000;
 }
-  
-  .boton {
+
+.boton {
   display: inline-block;
   background-color: #333;
   color: #fff;
@@ -169,12 +170,13 @@ nav {
   border-radius: 5px;
   text-decoration: none;
   transition: all 0.3s ease;
-  }
-  
-  .boton:hover {
+}
+
+.boton:hover {
   background-color: #fff;
   color: #333;
-  }
+}
+
   
   /* Sección "Acerca de" */
   .acerca-de {
