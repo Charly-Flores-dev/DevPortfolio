@@ -130,6 +130,53 @@ body {
   }
 }
 
+/* Estilos para la versión de escritorio */
+@media (min-width: 769px) {
+  .menu-toggle {
+    display: none;
+  }
+
+  .menu-items {
+    display: flex;
+  }
+
+  .modo-toggle {
+    display: flex;
+    align-items: center;
+  }
+
+  .modo-toggle label {
+    display: flex;
+    align-items: center;
+  }
+
+  .modo-icono {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: #333;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .modo-icono::after {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+  }
+
+  .dark-mode-toggle:checked + .modo-icono::after {
+    transform: translateX(20px);
+  }
+}
+
+
 
  /* Sección de inicio */
 .inicio {
