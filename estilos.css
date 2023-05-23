@@ -294,50 +294,70 @@ body {
 }
 
 /* Sección "Contacto" */
-#contacto {
-  background-color: #f2f2f2;
-  padding: 50px;
+overflow: hidden; /* Agrege un overflow para evitar desbordamientos */
+ #contacto {
+	background-color: #f2f2f2;
+	padding: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column; 
   overflow: hidden; /* Agrege un overflow para evitar desbordamientos */
-}
-
-#contacto .contenedor {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 30px;
-}
-
-/* Ajuste el ancho de los campos de entrada en el formulario de contacto */
-#contacto form input,
-#contacto form textarea {
-  width: 100%;
-  max-width: 600px; /* Limita el ancho máximo según  necesidades */
-}
-
-/* Ajuste el espacio entre los elementos de contacto */
-
-
-.contacto-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.contacto-info div {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  cursor: pointer
-}
-
-.contacto-info img {
-  width: 24px;
-  cursor: pointer
-}
-
-
-
-
+  }
+  
+  #contacto .contenedor {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 30px;
+  }
+  
+  #contacto h2 {
+	font-size: 32px;
+	margin-bottom: 20px;
+  }
+  
+  #contacto form input,
+  #contacto form textarea {
+	width: 100%;
+	padding: 10px;
+	font-size: 16px;
+	margin-bottom: 20px;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	resize: none; 
+  }
+  
+  #contacto form input[type="submit"] {
+	background-color: #333;
+	color: #fff;
+	border: none;
+	cursor: pointer;
+  }
+  
+  #contacto form input[type="submit"]:hover {
+	background-color: #666;
+  }
+  /*iconos de contacto*/
+  .contacto-info {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	margin-top: 20px;
+  }
+  
+  .contacto-info div {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+  }
+  
+  .contacto-info img {
+	width: 24px;
+  }
+  
+  .contacto-info span {
+	font-size: 16px;
+  }
   
   /* Footer */
   footer {
@@ -349,7 +369,7 @@ body {
   
   footer p {
   margin: 0;
-  font-size: 15px;
+  font-size: 14px;
   }
   
   footer a {
