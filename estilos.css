@@ -170,17 +170,7 @@ body {
   position: relative;
 }
 
-.inicio::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(10px);
-  pointer-events: none;
-}
+
 
 .inicio .contenido {
   text-align: center;
@@ -202,7 +192,12 @@ body {
   line-height: 1.6;
   color: #1E90FF;
   text-shadow: 2px 2px 4px #fff;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  padding: 10px;
+  border-radius: 5px;
 }
+
 
 .boton {
   display: inline-block;
