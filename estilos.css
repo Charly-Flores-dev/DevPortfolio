@@ -243,7 +243,7 @@ body {
 
 .palabras-animadas span {
   font-family: 'Anonymous Pro', monospace;
-  /* Resto de los estilos */
+  
 }
 .palabras-animadas span {
   opacity: 0;
@@ -266,7 +266,28 @@ body {
   }
 }
 
+@keyframes escribir {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
 
+.palabras-animadas span:nth-child(2) {
+  animation-delay: 1.5s;
+}
+
+.palabras-animadas span:nth-child(3) {
+  animation-delay: 2.5s;
+}
 
 .habilidades {
   background-color: #f5f5f5;
