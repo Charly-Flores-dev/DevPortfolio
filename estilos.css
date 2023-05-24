@@ -205,7 +205,7 @@ body {
   background-color: #333;
   color: #fff;
   padding: 10px 20px;
-  border-radius: 5px;
+  border-radius: 8px;
   text-decoration: none;
   transition: all 0.3s ease;
 }
@@ -243,19 +243,21 @@ body {
 
 .palabras-animadas span {
   font-family: 'Anonymous Pro', monospace;
-  
+  font-size: 20px;
+  font-weight: bold;
+  color: #007aff;
 }
 .palabras-animadas span {
   opacity: 0;
-  animation: escribir 0.8s forwards;
+  animation: escribir 2s forwards;
 }
 
 .palabras-animadas span:nth-child(1) {
-  animation-delay: 0.1s;
+  animation-delay: 2s;
 }
 
 .palabras-animadas span:nth-child(2) {
-  animation-delay: 0.2s;
+  animation-delay: 2s;
 }
 
 /* Agrega las reglas de animation-delay a cada span en consecuencia */
@@ -282,11 +284,11 @@ body {
 }
 
 .palabras-animadas span:nth-child(2) {
-  animation-delay: 1.5s;
+  animation-delay: 2.5s;
 }
 
 .palabras-animadas span:nth-child(3) {
-  animation-delay: 2.5s;
+  animation-delay: 3.5s;
 }
 
 .habilidades {
@@ -370,7 +372,7 @@ body {
 	padding: 50px;
 	display: flex;
 	justify-content: center;
-	align-items: center;
+	align-items: stretch;
 	flex-direction: column; 
   overflow: hidden; /* Agrege un overflow para evitar desbordamientos */
   }
