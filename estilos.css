@@ -164,11 +164,7 @@ body {
  /* Sección de inicio */
 .inicio {
   height: 100vh;
-  background-image:linear-gradient(0deg,
-  	rgba(0,0,0,0.5),
-	rgba(0,0,0,0.5),
- )
- ,url("https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80");
+  background-image:url("https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80");
   background-position: center;
   background-size: cover;
   display: flex;
