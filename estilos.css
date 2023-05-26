@@ -189,10 +189,7 @@ body {
   margin-bottom: 20px;
   color: #000;
   text-shadow: 2px 2px 4px #fff;
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(09px);
-  padding: 10px;
-  border-radius: 8px;
+
 }
 
 .inicio p {
