@@ -1,11 +1,73 @@
-import random
-import string
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Piedra, Papel, Tijeras</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
 
-def generar_contrasena(longitud):
-    caracteres = string.ascii_letters + string.digits + string.punctuation
-    contrasena = ''.join(random.choice(caracteres) for _ in range(longitud))
-    return contrasena
+    h1 {
+      color: #333;
+    }
 
-longitud_deseada = int(input("Ingrese la longitud deseada para la contraseña: "))
-contrasena_generada = generar_contrasena(longitud_deseada)
-print("Contraseña generada:", contrasena_generada)
+    .message {
+      margin-bottom: 20px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .buttons button {
+      margin: 5px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Piedra, Papel, Tijeras</h1>
+
+  <div class="message"></div>
+
+  <div class="buttons">
+    <button onclick="playGame('rock')">Piedra</button>
+    <button onclick="playGame('paper')">Papel</button>
+    <button onclick="playGame('scissors')">Tijeras</button>
+  </div>
+
+  <script>
+    function playGame(playerChoice) {
+      const choices = ['rock', 'paper', 'scissors'];
+      const computerChoice = choices[Math.floor(Math.random() * choices.length)];
+      const message = document.querySelector('.message');
+
+      if (playerChoice === computerChoice) {
+        message.textContent = 'Empate. Ambos eligieron ' + playerChoice + '.';
+        message.style.color = 'gray';
+      } else if (
+        (playerChoice === 'rock' && computerChoice === 'scissors') ||
+        (playerChoice === 'paper' && computerChoice === 'rock') ||
+        (playerChoice === 'scissors' && computerChoice === 'paper')
+      ) {
+        message.textContent = '¡Ganaste! ' + playerChoice + ' vence a ' + computerChoice + '.';
+        message.style.color = 'green';
+      } else {
+        message.textContent = 'Perdiste. ' + computerChoice + ' vence a ' + playerChoice + '.';
+        message.style.color = 'red';
+      }
+    }
+  </script>
+</body>
+</html>
+
