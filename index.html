@@ -1,73 +1,22 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@700&display=swap" rel="stylesheet">
+<head>
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-235XB3XMLP"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-235XB3XMLP');
-      
-   </script>
-   <script>
-          document.addEventListener('DOMContentLoaded', function() { 
-
-          // JavaScript para controlar el menú desplegable en dispositivos móviles
-          document.getElementById("menu-toggle").addEventListener("change", function() {
-          var menuDropdown = document.querySelector(".menu-dropdown");
-          if (this.checked) {
-          menuDropdown.classList.add("active");
-          } else {
-          menuDropdown.classList.remove("active");
-          }
-          });
-
-
-        // Obtener todas las barras de habilidades y animarlas
-         function llenarBarras() {
-          const barras = document.querySelectorAll('.porcentaje');
-          barras.forEach(barra => {
-          const porcentaje = barra.getAttribute('data-porcentaje');
-          barra.style.width = `${porcentaje}%`;
-          });
-          }
-
-        // Verificar si el usuario ha llegado a la sección de habilidades
-            function verificarHabilidades() {
-            const habilidadesSection = document.querySelector('.habilidades');
-            const habilidadesTop = habilidadesSection.offsetTop;
-            const habilidadesHeight = habilidadesSection.offsetHeight;
-            const scrollTop = window.pageYOffset;
-            const windowHeight = window.innerHeight;
-
-            if (scrollTop > habilidadesTop - windowHeight + habilidadesHeight) {
-            llenarBarras();
-            window.removeEventListener('scroll', verificarHabilidades); // Remover el evento para evitar ejecuciones adicionales
-            }
-            }
-
-            window.addEventListener('scroll', verificarHabilidades);
-</script>
-
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="https://th.bing.com/th/id/OIP.V72SO3bdBYkq7Y_k9xGc-AAAAA?pid=ImgDet&rs=1" type="image/x-icon">
-    <title>Dev-Portafolio Charlie Flores</title>
-    <link rel="stylesheet" href="estilos.css">
-   
-  </head>
-  <body>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="https://th.bing.com/th/id/OIP.V72SO3bdBYkq7Y_k9xGc-AAAAA?pid=ImgDet&rs=1" type="image/x-icon">
+  <title>Dev-Portafolio Charlie Flores</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  
     
 <!-- Barra de navegación,https://th.bing.com/th/id/R.c9c4abb603affbf2b3a09e8fd866a0a2?rik=4C81%2b2DZgidCPg&riu=http%3a%2f%2fwww.100pies.net%2fgifs%2fAnimales%2fPanteras%2fpantera10.gif&ehk=9xpXGQSoD5BuqQ%2b%2fEs7%2f1%2bwPSLSpd2bWOiPgQT91l4U%3d&risl=&pid=ImgRaw&r=0" alt="Pantera   ,https://th.bing.com/th/id/R.a36c22434fa8dfb3a8e7dd0b54cdce5a?rik=INW1xIogpxXWZw&riu=http%3a%2f%2fwww.100pies.net%2fGifs%2fAnimales%2fPanteras%2fpantera01.gif&ehk=01hYQ2S8nnfXIvyJ6u33g0HN%2bSBF4UojO7BUmshmNbU%3d&risl=&pid=ImgRaw&r=0-->
- 
+
 <div class="logo">
   <nav class="menu">
     <div class="menu-header">
@@ -86,58 +35,45 @@
   </nav>
 </div>
 
-
-    <!-- Icono de luna -->
-    <div class="modo-toggle">
-      <i class="material-icons">brightness_2</i>
-    </div>
-  </nav>
+<!-- Icono de luna -->
+<div class="modo-toggle">
+  <i class="material-icons">brightness_2</i>
 </div>
 
+<!-- Sección de inicio -->
+<section id="inicio" class="inicio">
+  <div class="contenido">
+    <h1>Bienvenido a mi portafolio</h1>
+    <p>¡Hola! Soy Carlos Flores, originario de Saltillo, Coahuila, estudiante de ingeniería en desarrollo de software. Me apasiona el mundo de la tecnología y me gusta trabajar en proyectos desafiantes que me permitan seguir aprendiendo y creciendo como profesional.</p>
+    <a href="#contacto" class="boton">Contacto</a>
+  </div>
+</section>
 
-
- 
-
- 
-    <!-- Sección de inicio -->
-    <section id="inicio" class="inicio">
-      <div class="contenido">
-        <h1>Bienvenido a mi portafolio</h1>
-        <p>¡Hola! Soy Carlos Flores,originario de Saltillo,Coahuila, estudiante de ingenieria en desarrollo de software. Me apasiona el mundo de la tecnología y me gusta trabajar en proyectos desafiantes que me permitan seguir aprendiendo y creciendo como profesional.</p>
-        <a href="#contacto" class="boton">Contacto</a>
-      </div>
-    </section>
-
-    <!-- Sección "Acerca de" -->
-    <section id="acerca-de" class="acerca-de">
-      <div class="contenido">
-        <h2>Acerca de mí</h2>
-        <p>Soy un desarrollador de software apasionado por la tecnología. Me gusta mantenerme actualizado en las últimas tendencias y herramientas de programación, y siempre estoy buscando nuevas formas de mejorar mis habilidades.</p>
-        <p>Estudio Ingeniería en Desarrollo de Software en la <a href="https://www.uane.edu.mx/">Universidad Autónoma del Noreste (UANE)</a>.</p>
-        <a href="#contacto" class="boton">Contacto</a>
-      </div>
-    </section>
-
- 
-    
+<!-- Sección "Acerca de" -->
+<section id="acerca-de" class="acerca-de">
+  <div class="contenido">
+    <h2>Acerca de mí</h2>
+    <p>Soy un desarrollador de software apasionado por la tecnología. Me gusta mantenerme actualizado en las últimas tendencias y herramientas de programación, y siempre estoy buscando nuevas formas de mejorar mis habilidades.</p>
+    <p>Estudio Ingeniería en Desarrollo de Software en la <a href="https://www.uane.edu.mx/">Universidad Autónoma del Noreste (UANE)</a>.</p>
+    <a href="#contacto" class="boton">Contacto</a>
+  </div>
+</section>
+  
  <!-- Sección "Habilidades" -->
-    
-
-
 <section id="habilidades" class="habilidades">
   <div class="contenido">
-  <h2>Habilidades</h2>
-    
-  <div class="palabras-animadas">
-  <span>Desarrollo</span>
-  <span>Web</span>
-  <span>Software</span>
-  <span>Apps</span>
-  <span>Ciberseguridad</span>
-  <span>Consultorías</span>
-  <span>Servicio Técnico</span>
-</div>
-    
+    <h2>Habilidades</h2>
+
+    <div class="palabras-animadas">
+      <span>Desarrollo</span>
+      <span>Web</span>
+      <span>Software</span>
+      <span>Apps</span>
+      <span>Ciberseguridad</span>
+      <span>Consultorías</span>
+      <span>Servicio Técnico</span>
+    </div>
+
     <div class="habilidad">
       <h3>HTML</h3>
       <div class="barra">
@@ -167,36 +103,32 @@
 
 
     
-    <!-- Sección "Proyectos" -->
-  <p>Aquí encontaras los proyectos en los cuales estoy trabajando o las ideas que estoy por empezar en el mundo de la programación.</p>
-  <h2>Proyectos</h2>
-  <section id="proyectos" class="proyectos">
- 
+ <!-- Sección "Proyectos" -->
+<section id="proyectos" class="proyectos">
   <div class="contenido">
-  
-    
-  <div class="proyecto">
+    <p>Aquí encontrarás los proyectos en los cuales estoy trabajando o las ideas que estoy por empezar en el mundo de la programación.</p>
+    <h2>Proyectos</h2>
+
+    <div class="proyecto">
       <img src="https://th.bing.com/th/id/OIP.IROp5sWqRsWA0QSGJEiGjwHaE8?pid=ImgDet&rs=1" alt="Proyecto 1">
       <h3>Proyecto 1</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-        ut labore et dolore magna aliqua. Ullamcorper sit amet risus nullam eget felis eget nunc. Sodales neque sodales ut etiam sit amet nisl purus in.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ullamcorper sit amet risus nullam eget felis eget nunc. Sodales neque sodales ut etiam sit amet nisl purus in.</p>
       <a href="proyecto1.html" class="boton">Ver más</a>
     </div>
-    
+
     <div class="proyecto">
       <img src="https://th.bing.com/th/id/R.950fea7b11977f40083a6732350a04b1?rik=3i9U2NAwgREUtg&pid=ImgRaw&r=0" alt="Proyecto 2">
       <h3>Proyecto 2</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ullamcorper sit amet risus nullam eget felis eget nunc. </p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ullamcorper sit amet risus nullam eget felis eget nunc.</p>
       <a href="proyecto2.html" class="boton">Ver más</a>
     </div>
-    
+
     <div class="proyecto">
       <img src="https://th.bing.com/th/id/OIP.kF0v69iX6GyFUWjf66sd9gHaFH?pid=ImgDet&rs=1" alt="Proyecto 3">
       <h3>Proyecto 3</h3>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ullamcorper sit amet risus nullam eget felis eget nunc.</p>
       <a href="proyecto3.html" class="boton">Ver más</a>
     </div>
-    
   </div>
 </section>
 
@@ -205,29 +137,74 @@
 <section id="contacto">
   <h2>Contacto</h2>
   <div class="contenedor">
-<form
-  action="https://formspree.io/f/mgebqqoo"
-  method="POST">
-  <input type="text" name="nombre" placeholder="Nombre" required>
-  <input type="email" name="email" placeholder="Email" required>
-  <textarea name="mensaje" placeholder="Mensaje" required></textarea>    
-  <input type="submit" value="Enviar">
-</form>
+    <form action="https://formspree.io/f/mgebqqoo" method="POST">
+      <input type="text" name="nombre" placeholder="Nombre" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <textarea name="mensaje" placeholder="Mensaje" required></textarea>    
+      <input type="submit" value="Enviar">
+    </form>
+  </div>
+    
+  <div class="contacto-info">
+    <div><img src="https://www.svgrepo.com/show/504557/maps.svg" alt="Ubicación"><span>Saltillo, Coahuila, México</span></div>
+    <div><img src="https://www.svgrepo.com/show/478293/smartphone-free.svg" alt="Teléfono"><span>+52 844 594 5341</span></div>
+    <div><img src="https://www.svgrepo.com/show/511921/email-1573.svg" alt="Email"><span>charlessflo23@gmail.com</span></div>
+  </div>
 </section>
-</div>
-    
-      <div class="contacto-info">
-      <div><img src="https://www.svgrepo.com/show/504557/maps.svg" alt="Ubicación"><span>Saltillo, Coahuila, México</span></div>
-      <div><img src="https://www.svgrepo.com/show/478293/smartphone-free.svg" alt="Teléfono"><span>+52 844 594 5341</span></div>
-      <div><img src="https://www.svgrepo.com/show/511921/email-1573.svg" alt="Email"><span>charlessflo23@gmail.com</span></div>
-      </div>
 
-    
-<!-- Sección "Pie de página" Rev.05/23/0.1-->
+<!-- Sección "Pie de página" -->
 <footer>
   <p>© 2023 Carlos Flores{Bph3k}</p>
-  <p>Foto de <a href="https://unsplash.com/@lucabravo?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Luca Bravo</a> en <a href="https://unsplash.com/es/fotos/XJXWbfSo2f0?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-  </p>
+  <p>Foto de <a href="https://unsplash.com/@lucabravo?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Luca Bravo</a> en <a href="https://unsplash.com/es/fotos/XJXWbfSo2f0?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></p>
 </footer>
+  
+ <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+ <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-235XB3XMLP"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-235XB3XMLP');
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // JavaScript para controlar el menú desplegable en dispositivos móviles
+      document.getElementById("menu-toggle").addEventListener("change", function() {
+        var menuDropdown = document.querySelector(".menu-dropdown");
+        if (this.checked) {
+          menuDropdown.classList.add("active");
+        } else {
+          menuDropdown.classList.remove("active");
+        }
+      });
+
+      // Obtener todas las barras de habilidades y animarlas
+      function llenarBarras() {
+        const barras = document.querySelectorAll('.porcentaje');
+        barras.forEach(barra => {
+          const porcentaje = barra.getAttribute('data-porcentaje');
+          barra.style.width = `${porcentaje}%`;
+        });
+      }
+
+      // Verificar si el usuario ha llegado a la sección de habilidades
+      function verificarHabilidades() {
+        const habilidadesSection = document.querySelector('.habilidades');
+        const habilidadesTop = habilidadesSection.offsetTop;
+        const habilidadesHeight = habilidadesSection.offsetHeight;
+        const scrollTop = window.pageYOffset;
+        const windowHeight = window.innerHeight;
+
+        if (scrollTop > habilidadesTop - windowHeight + habilidadesHeight) {
+          llenarBarras();
+          window.removeEventListener('scroll', verificarHabilidades); // Remover el evento para evitar ejecuciones adicionales
+        }
+      }
+
+      window.addEventListener('scroll', verificarHabilidades);
+    });
+  </script>
 </body>
 </html>
