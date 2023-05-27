@@ -217,7 +217,7 @@ body {
   font-weight: bold;
   color: #007aff;
   opacity: 0;
-  animation: escribir 3s ease-in-out infinite steps(10);;
+  animation: escribir 5s ease-in-out infinite alternate;
 }
 
 .palabras-animadas span:nth-child(1) {
