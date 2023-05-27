@@ -18,43 +18,43 @@
       
    </script>
    <script>
-     
-// JavaScript para controlar el menú desplegable en dispositivos móviles
-document.getElementById("menu-toggle").addEventListener("change", function() {
-  var menuDropdown = document.querySelector(".menu-dropdown");
-  if (this.checked) {
-    menuDropdown.classList.add("active");
-  } else {
-    menuDropdown.classList.remove("active");
-  }
-});
+          document.addEventListener('DOMContentLoaded', function() { 
 
-     
-// Obtener todas las barras de habilidades y animarlas
-function llenarBarras() {
-  const barras = document.querySelectorAll('.porcentaje');
+          // JavaScript para controlar el menú desplegable en dispositivos móviles
+          document.getElementById("menu-toggle").addEventListener("change", function() {
+          var menuDropdown = document.querySelector(".menu-dropdown");
+          if (this.checked) {
+          menuDropdown.classList.add("active");
+          } else {
+          menuDropdown.classList.remove("active");
+          }
+          });
 
-  barras.forEach(barra => {
-    const porcentaje = barra.getAttribute('data-porcentaje');
-    barra.style.width = `${porcentaje}%`;
-  });
-}
 
-// Verificar si el usuario ha llegado a la sección de habilidades
-function verificarHabilidades() {
-  const habilidadesSection = document.querySelector('.habilidades');
-  const habilidadesTop = habilidadesSection.offsetTop;
-  const habilidadesHeight = habilidadesSection.offsetHeight;
-  const scrollTop = window.pageYOffset;
-  const windowHeight = window.innerHeight;
+        // Obtener todas las barras de habilidades y animarlas
+         function llenarBarras() {
+          const barras = document.querySelectorAll('.porcentaje');
+          barras.forEach(barra => {
+          const porcentaje = barra.getAttribute('data-porcentaje');
+          barra.style.width = `${porcentaje}%`;
+          });
+          }
 
-  if (scrollTop > habilidadesTop - windowHeight + habilidadesHeight) {
-    llenarBarras();
-    window.removeEventListener('scroll', verificarHabilidades); // Remover el evento para evitar ejecuciones adicionales
-  }
-}
+        // Verificar si el usuario ha llegado a la sección de habilidades
+            function verificarHabilidades() {
+            const habilidadesSection = document.querySelector('.habilidades');
+            const habilidadesTop = habilidadesSection.offsetTop;
+            const habilidadesHeight = habilidadesSection.offsetHeight;
+            const scrollTop = window.pageYOffset;
+            const windowHeight = window.innerHeight;
 
-window.addEventListener('scroll', verificarHabilidades);
+            if (scrollTop > habilidadesTop - windowHeight + habilidadesHeight) {
+            llenarBarras();
+            window.removeEventListener('scroll', verificarHabilidades); // Remover el evento para evitar ejecuciones adicionales
+            }
+            }
+
+            window.addEventListener('scroll', verificarHabilidades);
 </script>
 
     <meta charset="UTF-8" />
@@ -83,6 +83,9 @@ window.addEventListener('scroll', verificarHabilidades);
       <li><a href="#proyectos"><i class="material-icons">folder</i></a></li>
       <li><a href="#contacto"><i class="material-icons">mail</i></a></li>
     </ul>
+  </nav>
+</div>
+
 
     <!-- Icono de luna -->
     <div class="modo-toggle">
