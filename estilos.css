@@ -64,7 +64,7 @@ body {
 }
 
 .menu-icon {
-  display: none;
+  display: block;
   color: #fff;
   font-size: 20px;
   cursor: pointer;
