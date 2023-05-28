@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
+    
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,13 +15,17 @@
   <body>
     
 <!-- Barra de navegación,https://th.bing.com/th/id/R.c9c4abb603affbf2b3a09e8fd866a0a2?rik=4C81%2b2DZgidCPg&riu=http%3a%2f%2fwww.100pies.net%2fgifs%2fAnimales%2fPanteras%2fpantera10.gif&ehk=9xpXGQSoD5BuqQ%2b%2fEs7%2f1%2bwPSLSpd2bWOiPgQT91l4U%3d&risl=&pid=ImgRaw&r=0" alt="Pantera   ,https://th.bing.com/th/id/R.a36c22434fa8dfb3a8e7dd0b54cdce5a?rik=INW1xIogpxXWZw&riu=http%3a%2f%2fwww.100pies.net%2fGifs%2fAnimales%2fPanteras%2fpantera01.gif&ehk=01hYQ2S8nnfXIvyJ6u33g0HN%2bSBF4UojO7BUmshmNbU%3d&risl=&pid=ImgRaw&r=0-->
-    
+ 
 <div class="logo">
   <nav class="menu">
     <img src="https://th.bing.com/th/id/R.6ec7823da7f6327081a3b78c18f6fe78?rik=bf6iiVD1xzd4bg&riu=http%3a%2f%2fwww.gifde.com%2fjs_pics_aux%2fdescarga.php%3fdescarga%3dsi%26c%3dgif%2fotros%2fnaturaleza%2fanimales%2fmamiferos%2fpanteras%2f%26f%3dpantera-001.gif&ehk=fXPRvuXdz57aWodwnl%2bup4Vw18u%2fCQRtGuNRm0GHprc%3d&risl=&pid=ImgRaw&r=0">
     <h4>{Charlie^Flores}</h4>
     <input type="checkbox" id="menu-toggle" />
-    <label for="menu-toggle" class="menu-icon"><i class="fas fa-bars"></i></label>
+    <label for="menu-toggle" class="menu-icon">
+      <i class="material-icons">menu</i>
+    </label>
+    
+
     <ul class="menu-items">
       <li><a href="#inicio">Inicio</a></li>
       <li><a href="#acerca-de">Acerca de</a></li>
@@ -29,10 +34,11 @@
       <li><a href="#contacto">Contacto</a></li>
     </ul>
 
-    <!-- Icono de luna para el modo oscuro -->
-    <div class="modo-toggle">
-      <i id="modo-icono" class="far fa-moon"></i>
-    </div>
+     <!-- Icono de luna -->
+<div class="modo-toggle">
+  <i id="modo-icono" class="material-icons">dark_mode</i>
+</div>
+
   </nav>
 </div>
 
@@ -154,7 +160,7 @@
   <p>© 2023 Carlos Flores{Bph3k}</p>
   <p>Foto de <a href="https://unsplash.com/@lucabravo?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Luca Bravo</a> en <a href="https://unsplash.com/es/fotos/XJXWbfSo2f0?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></p>
 </footer>
-<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-235XB3XMLP"></script>
 <script>
@@ -165,44 +171,23 @@
 </script>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // JavaScript para controlar el menú desplegable en dispositivos móviles
-    document.getElementById("menu-toggle").addEventListener("change", function() {
-      var menuItems = document.querySelector(".menu-items");
-      if (this.checked) {
-        menuItems.classList.add("active");
-      } else {
-        menuItems.classList.remove("active");
-      }
-    });
+// Obtener el elemento del interruptor de modo
+const modoToggle = document.querySelector('.modo-toggle');
+// Obtener el elemento del ícono de modo
+const modoIcono = document.querySelector('#modo-icono');
 
-    // Obtener todas las barras de habilidades y animarlas
-    function llenarBarras() {
-      const barras = document.querySelectorAll('.porcentaje');
-      barras.forEach(barra => {
-        const porcentaje = barra.getAttribute('data-porcentaje');
-        barra.style.width = `${porcentaje}%`;
-      });
-    }
+// Agregar un evento de clic al interruptor de modo
+modoToggle.addEventListener('click', () => {
+  // Alternar la clase 'dark-mode' en el elemento body
+  document.body.classList.toggle('dark-mode');
 
-    // Verificar si el usuario ha llegado a la sección de habilidades
-    function verificarHabilidades() {
-      const habilidadesSection = document.querySelector('.habilidades');
-      const habilidadesTop = habilidadesSection.offsetTop;
-      const habilidadesHeight = habilidadesSection.offsetHeight;
-      const scrollTop = window.pageYOffset;
-      const windowHeight = window.innerHeight;
-
-      if (scrollTop > habilidadesTop - windowHeight + habilidadesHeight) {
-        llenarBarras();
-        window.removeEventListener('scroll', verificarHabilidades); // Remover el evento para evitar ejecuciones adicionales
-      }
-    }
-
-    window.addEventListener('scroll', verificarHabilidades);
-  });
-</script>
- 
- 
+  // Cambiar el ícono del modo según el estado
+  if (document.body.classList.contains('dark-mode')) {
+    modoIcono.textContent = 'light_mode'; // Cambiar al ícono de modo claro
+  } else {
+    modoIcono.textContent = 'dark_mode'; // Cambiar al ícono de modo oscuro
+  }
+});
+</script> 
 </body>
 </html>
