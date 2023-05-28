@@ -35,10 +35,13 @@
     </ul>
 
      <!-- Icono de luna -->
-<div class="modo-toggle">
-  <i id="modo-icono" class="material-icons">dark_mode</i>
-</div>
-
+     <div class="modo-toggle">
+      <label class="switch">
+        <input type="checkbox" id="modo-toggle" />
+        <span class="slider round"></span>
+      </label>
+      <i id="modo-icono" class="material-icons">brightness_4</i>
+    </div>
   </nav>
 </div>
 
@@ -188,6 +191,6 @@ modoToggle.addEventListener('click', () => {
     modoIcono.textContent = 'dark_mode'; // Cambiar al ícono de modo oscuro
   }
 });
-</script> 
+</script>
 </body>
 </html>
