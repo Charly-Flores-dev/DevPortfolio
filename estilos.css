@@ -15,22 +15,14 @@
 	background-color: #fff;
   }
   
-  /* Modo nocturno */
-  body.dark-mode {
-	background-color: #000;
-	color: #fff;
-  
-  }
-  .dark-mode .menu a,
-  .dark-mode .toggle i,
   .dark-mode .modo-toggle i {
-	color: #fff;
+    color: #fff;
   }
   
-  .dark-mode .menu a:hover,
-  .dark-mode .modo-toggle:hover i {
-	color: #ccc;
+  .dark-mode .modo-toggle i:hover {
+    color: #ccc;
   }
+  
   
   /* Barra de navegación */
   nav {
@@ -58,10 +50,9 @@
   .logo span {
 	font-weight: bold;
   }
-
+ 
   #menu-toggle{
-    display: none;
-   
+    display:none;
   }
   .menu {
 	position: fixed;
@@ -73,7 +64,7 @@
   }
   
   .menu-icon {
-    display: block;
+    display: none;
     cursor: pointer;
     color: #fff;
     padding: 10px;
@@ -108,16 +99,9 @@
   
 	.menu-icon {
 	  display: block;
-    right: 0;
-    margin: 0 1rem;
-   
+    
 	}
-  .menu-icon i {
-    font-family: "Font Awesome";
-    font-size: 20px;
-  }
-  
-  
+
 	.menu-items {
 	  display: none;
 	  flex-direction: column;
@@ -148,13 +132,6 @@
 	  display: flex;
 	}
 
-  #inicio {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 120vh;;
-   }
   
 }
   
@@ -169,7 +146,7 @@
   
   /* Sección de inicio */
 .inicio {
-  height: 100vh;
+  height: 150vh;
   background-image: url("https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80");
   background-position: center;
   background-size: cover;
