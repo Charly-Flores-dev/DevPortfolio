@@ -189,7 +189,7 @@ body.dark-mode {
 	}
   
   
-  /* Sección de inicio */
+ /* Sección de inicio */
 .inicio {
   height: 100vh;
   background-image: url("https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80");
@@ -204,7 +204,6 @@ body.dark-mode {
 
 .inicio .contenido {
   text-align: center;
-  margin-left: 0;
 }
 
 .inicio h1 {
@@ -223,7 +222,6 @@ body.dark-mode {
   z-index: 1;
   font-size: 20px;
   margin-bottom: 20px;
-  margin-left: 0;
   max-width: 600px;
   line-height: 1.6;
   color: #000;
@@ -232,6 +230,8 @@ body.dark-mode {
   padding: 10px;
   border-radius: 12px;
   text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .boton {
