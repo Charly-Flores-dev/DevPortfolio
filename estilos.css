@@ -133,6 +133,14 @@ html {
 	#menu-toggle:checked ~ .menu-items {
 	  display: flex;
 	}
+    #inicio {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+}
   
 	.proyectos .contenido {
 	  grid-template-columns: 1fr;
@@ -141,7 +149,7 @@ html {
 	#contacto .contenedor {
 	  grid-template-columns: 1fr;
 	}
-  }
+ 
 
 
 /* Sección de inicio */
