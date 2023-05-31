@@ -68,8 +68,7 @@ body.dark-mode {
   }
   /* Barra de navegación */
   nav {
-    display: flex;
-    z-index: 100;	  
+    display: flex;	  
     justify-content: space-between;
     align-items: center;
     background-color: #fff;
@@ -167,7 +166,7 @@ body.dark-mode {
 	  left: 0;
 	  right: 0;
 	  background: rgba(000, 000, 000, 0.5);
-    backdrop-filter: blur(0.9px);;
+          backdrop-filter: blur(0.9px);;
 	  padding: 10px;
 	}
   
