@@ -69,6 +69,7 @@ body.dark-mode {
   /* Barra de navegación */
   nav {
     display: flex;
+    z-index: 100;	  
     justify-content: space-between;
     align-items: center;
     background-color: #fff;
@@ -146,6 +147,17 @@ body.dark-mode {
 	  display: block;
     
 	}
+	 
+  h1, img {
+    margin: 0 auto; 
+    display: block; 
+  }
+}
+  h1, img {
+    margin-top: 100px; 
+  }
+}
+
 
 	.menu-items {
 	  display: none;
@@ -188,19 +200,8 @@ body.dark-mode {
 	  grid-template-columns: 1fr;
 	}
   
-  @media screen and (max-width: 768px) {
-  /* Ajusta el margen o padding del encabezado (h1) y la imagen */
-  h1, img {
-    margin-top: 100px; 
-  }
-}
-@media screen and (min-width: 768px) {
-  /* Centra el encabezado (h1) y la imagen */
-  h1, img {
-    margin: 0 auto; 
-    display: block; 
-  }
-}
+
+
 
  /* Sección de inicio */
 .inicio {
@@ -215,8 +216,9 @@ body.dark-mode {
   flex-direction: column;
 }
 
-.inicio .contenido {
-  text-align: center;
+.inicio .contenido {	
+ margin-top: 100px; 
+ text-align: center;
 }
 
 .inicio h1 {
@@ -458,23 +460,6 @@ body.dark-mode {
 }
 
 
-.faq {
-  margin-bottom: 10px;
-}
-
-.question {
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.answer {
-  display: none;
-  margin-top: 5px;
-}
-
-.active {
-  display: block;
-}
 
  /* Iconos de contacto */
 .parallax-section {
