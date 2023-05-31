@@ -140,6 +140,9 @@ body.dark-mode {
   backdrop-filter: blur(1px);
   }
   
+
+
+
   @media (max-width: 768px) {
   
 	.menu-icon {
@@ -147,6 +150,33 @@ body.dark-mode {
     
 	}
 	 
+.inicio h1,
+  .inicio p {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 99;
+    padding: 10px;
+  }
+  
+  .nav-menu ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .nav-menu li {
+    margin-bottom: 10px;
+  }
+}
+
 
 
 
