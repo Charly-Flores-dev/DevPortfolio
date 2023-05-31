@@ -458,7 +458,32 @@ body.dark-mode {
 }
 
 
+.faq {
+  margin-bottom: 10px;
+}
+
+.question {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.answer {
+  display: none;
+  margin-top: 5px;
+}
+
+.active {
+  display: block;
+}
+
  /* Iconos de contacto */
+.parallax-section {
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .contacto-info {
   display: flex;
   flex-direction: column;
