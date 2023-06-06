@@ -17,7 +17,7 @@
   /* Modo nocturno */
 body.dark-mode {
   background-color: #000;
-  color: #fff;
+  color: #007aff;
 }
  #modo-toggle{
   display:none;
@@ -106,7 +106,7 @@ body.dark-mode {
   }
   
   .menu-icon {
-    display: none;
+    display: block;
     cursor: pointer;
     color: #fff;
     padding: 10px;
