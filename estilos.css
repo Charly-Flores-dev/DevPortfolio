@@ -31,7 +31,7 @@ body.dark-mode {
 }
 
 .dark-mode .menu  a{
-  color: rgb(11, 11, 11);
+  color:#007aff;
   background: rgba(238, 228, 228, 0.7) ;
     backdrop-filter: blur(0.9px);
 
@@ -94,7 +94,7 @@ body.dark-mode {
   }
  
   #menu-toggle{
-    display:none;
+    display:block;
   }
   .menu {
 	position: fixed;
