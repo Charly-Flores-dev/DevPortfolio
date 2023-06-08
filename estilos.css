@@ -136,7 +136,12 @@ nav {
 .menu-items a {
 	display: block;
 	padding: 7px;
-}
+	color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  transition: background-color 0.3s ease;
+  }
+
 
 #menu-toggle:checked ~ .menu-items {
 	display: flex;
