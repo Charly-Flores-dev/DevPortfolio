@@ -154,14 +154,21 @@
 
 
 
-
+<div class="contacto-info">
+  
 <section class="parallax-section" id="section1">
-  <div class="contacto-info">
-    <div><img src="https://www.svgrepo.com/show/504557/maps.svg" alt="Ubicación"><span>Saltillo, Coahuila, México</span></div>
-    <div><img src="https://www.svgrepo.com/show/478293/smartphone-free.svg" alt="Teléfono"><span>+52 844 594 5341</span></div>
+    <div><img src="https://www.svgrepo.com/show/504557/maps.svg" alt="Ubicación"><span>Saltillo, Coahuila, México</span></div>  
+ </section>
+  
+<section class="parallax-section" id="section2">
+  <div><img src="https://www.svgrepo.com/show/478293/smartphone-free.svg" alt="Teléfono"><span>+52 844 594 5341</span></div>
+</section>
+
+<section class="parallax-section" id="section3">
     <div><img src="https://www.svgrepo.com/show/511921/email-1573.svg" alt="Email"><span>charlessflo23@gmail.com</span></div>
+</section>
+  
   </div>
-  </section>
 
 
 <!-- Sección "Pie de página" -->
@@ -207,7 +214,7 @@ modoToggle.addEventListener('click', () => {
 </script>
 
   <script>
-  // Inicializar ScrollMagic
+// Inicializar ScrollMagic
 var controller = new ScrollMagic.Controller();
 
 // Crear la animación de parallax para la sección 1
@@ -218,6 +225,25 @@ var scene1 = new ScrollMagic.Scene({
 })
 .setTween('#section1', { backgroundPosition: 'center bottom', ease: Power0.easeNone })
 .addTo(controller);
+
+// Crear la animación de parallax para la sección 2
+var scene2 = new ScrollMagic.Scene({
+  triggerElement: '#section2',
+  triggerHook: 1,
+  duration: '100%'
+})
+.setTween('#section2', { backgroundPosition: 'center bottom', ease: Power0.easeNone })
+.addTo(controller);
+
+// Crear la animación de parallax para la sección 3
+var scene3 = new ScrollMagic.Scene({
+  triggerElement: '#section3',
+  triggerHook: 1,
+  duration: '100%'
+})
+.setTween('#section3', { backgroundPosition: 'center bottom', ease: Power0.easeNone })
+.addTo(controller);
+
 </script>
 </body>
 </html>
