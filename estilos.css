@@ -435,6 +435,37 @@ nav {
   height: 100px; 
   object-fit: cover; 
 }
+/* Estilos para el apartado de Prácticas */
+.practicas {
+  background-color: #f9f9f9;
+  padding: 20px;
+}
+
+.practicas h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.practicas p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Estilos para el apartado de Juego */
+.juego {
+  background-color: #f9f9f9;
+  padding: 20px;
+}
+
+.juego h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.juego p {
+  font-size: 16px;
+  line-height: 1.5;
+}
 
 /* Sección "Contacto" */
 #contacto {
@@ -486,11 +517,10 @@ nav {
  /* Iconos de contacto */
 .contacto-info {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   gap: 20px;
   margin-top: 20px;
-  text-decoration: none;
 }
 
 .contacto-info div {
@@ -507,6 +537,9 @@ nav {
   font-size: 16px;
 }
 
+.contacto-info a:hover {
+  color: #0077b5;
+}
   
   /* Footer */
 footer {
