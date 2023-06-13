@@ -9,11 +9,11 @@
             line-height: 1;
             transition: transform 0.3s ease-in-out;
         }
-        
+
         .panther:hover {
             transform: scale(1.1);
         }
-        
+
         .button {
             display: inline-block;
             padding: 10px;
@@ -22,9 +22,20 @@
             cursor: pointer;
             margin-right: 10px;
         }
-        
+
         .button:hover {
             background-color: #d0d0d0;
+        }
+
+        .panther-animation {
+            animation-duration: 0.5s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+
+        @keyframes pantherPulse {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
         }
     </style>
 </head>
@@ -43,7 +54,7 @@
             <button id="rest-button" class="button">Descansar</button>
         </div>
     </div>
-    
+
     <script>
         const pantherMatrix = [
             ["█", "▒", "█", "▒", "▒", "█", "▒", "█"],
@@ -63,7 +74,7 @@
         function printPanther() {
             const pantherImage = document.getElementById("panther-image");
             pantherImage.textContent = "";
-            for (let i = 0; i < pantherMatrix.length; i++) {
+                        for (let i = 0; i < pantherMatrix.length; i++) {
                 let row = pantherMatrix[i].join(" ");
                 pantherImage.innerHTML += row + "\n";
             }
@@ -75,14 +86,14 @@
             document.getElementById("energy-value").textContent = energy;
         }
 
-                function feed() {
+        function feed() {
             if (hunger < 100) {
                 hunger += 10;
                 updateStats();
-                // Agrega una animación al alimentar a la pantera
-                document.getElementById("panther-image").classList.add("feed-animation");
+                // Añade una animación de pulso al alimentar a la pantera
+                document.getElementById("panther-image").classList.add("panther-animation");
                 setTimeout(() => {
-                    document.getElementById("panther-image").classList.remove("feed-animation");
+                    document.getElementById("panther-image").classList.remove("panther-animation");
                 }, 500);
             }
         }
@@ -91,10 +102,10 @@
             if (happiness < 100) {
                 happiness += 10;
                 updateStats();
-                // Agrega una animación al jugar con la pantera
-                document.getElementById("panther-image").classList.add("play-animation");
+                // Añade una animación de pulso al jugar con la pantera
+                document.getElementById("panther-image").classList.add("panther-animation");
                 setTimeout(() => {
-                    document.getElementById("panther-image").classList.remove("play-animation");
+                    document.getElementById("panther-image").classList.remove("panther-animation");
                 }, 500);
             }
         }
@@ -103,10 +114,10 @@
             if (energy < 100) {
                 energy += 10;
                 updateStats();
-                // Agrega una animación al descansar la pantera
-                document.getElementById("panther-image").classList.add("rest-animation");
+                // Añade una animación de pulso al descansar la pantera
+                document.getElementById("panther-image").classList.add("panther-animation");
                 setTimeout(() => {
-                    document.getElementById("panther-image").classList.remove("rest-animation");
+                    document.getElementById("panther-image").classList.remove("panther-animation");
                 }, 500);
             }
         }
