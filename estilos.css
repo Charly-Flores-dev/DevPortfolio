@@ -435,10 +435,13 @@ nav {
   height: 100px; 
   object-fit: cover; 
 }
+
 /* Estilos para el apartado de Prácticas */
 .practicas {
-  background-color: #f9f9f9;
-  padding: 20px;
+  background-color: #f2f2f2;
+  padding: 50px;
+  text-align: center; 
+  overflow: hidden; /* Agregamos un overflow para evitar desbordamientos */
 }
 
 .practicas h2 {
@@ -450,11 +453,25 @@ nav {
   font-size: 16px;
   line-height: 1.5;
 }
+.practicas .contenido {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+  margin-top: 30px;
+  text-align: center; 
+}
+.practicas .practicas img {
+  width: 100%;
+  height: 100px; 
+  object-fit: cover; 
+}
 
 /* Estilos para el apartado de Juego */
 .juego {
-  background-color: #f9f9f9;
-  padding: 20px;
+  background-color: #f2f2f2;
+  padding: 50px;
+  text-align: center; 
+  overflow: hidden; /* Agregamos un overflow para evitar desbordamientos */
 }
 
 .juego h2 {
@@ -465,6 +482,18 @@ nav {
 .juego p {
   font-size: 16px;
   line-height: 1.5;
+}
+.juego .contenido {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+  margin-top: 30px;
+  text-align: center; 
+}
+.juego .juego img {
+  width: 100%;
+  height: 100px; 
+  object-fit: cover; 
 }
 
 /* Sección "Contacto" */
@@ -517,7 +546,7 @@ nav {
  /* Iconos de contacto */
 .contacto-info {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   gap: 20px;
   margin-top: 20px;
