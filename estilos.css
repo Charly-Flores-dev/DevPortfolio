@@ -169,7 +169,7 @@ nav {
 	transition: background-color 0.3s ease;
 }
 
-@media (max-width: 768px) {
+@media (640px ≤ width < 768px) {
 	.menu-icon {
 		display: block;
 	}
