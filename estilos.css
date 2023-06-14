@@ -118,7 +118,7 @@ nav {
 }
 
 .menu-items {
-	display: flex;
+	display: none;
 	flex-direction: column;
 	position: fixed;
 	top: 45px;
@@ -563,7 +563,9 @@ nav {
 
 .contacto-info img {
   width: 24px;
+  cursor: pointer;
   transform: matrix(0,1,1,0,0,0);
+	
 }
 
 .contacto-info span {
