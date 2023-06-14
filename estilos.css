@@ -563,9 +563,13 @@ nav {
 .contacto-info img {
   width: 24px;
   cursor: pointer;
- 
-	
+  transition: transform 0.3s ease;
 }
+
+.contacto-info img:hover {
+  transform: matrix(0, 1, 1, 0, 0, 0);
+}
+
 
 .contacto-info span {
   font-size: 16px;
