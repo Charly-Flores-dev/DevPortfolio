@@ -33,6 +33,25 @@
             animation-direction: alternate;
         }
 
+        .pixel {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-color: #000;
+        }
+
+        .pixel-hunger {
+            background-color: #FF0000;
+        }
+
+        .pixel-happiness {
+            background-color: #00FF00;
+        }
+
+        .pixel-energy {
+            background-color: #0000FF;
+        }
+
         @keyframes pantherPulse {
             0% { transform: scale(1); }
             100% { transform: scale(1.1); }
@@ -42,7 +61,7 @@
 <body>
     <h1>Tamagotchi de Pantera</h1>
     <div id="game-container">
-        <pre id="panther-image" class="panther"></pre>
+        <div id="panther-image" class="panther"></div>
         <div id="stats">
             <p id="hunger">Hambre: <span id="hunger-value">100</span></p>
             <p id="happiness">Felicidad: <span id="happiness-value">100</span></p>
@@ -57,14 +76,14 @@
 
     <script>
         const pantherMatrix = [
-            ["█", "▒", "█", "▒", "▒", "█", "▒", "█"],
-            ["█", "▒", "▒", "█", "▒", "▒", "▒", "█"],
-            ["█", "█", "▒", "▒", "▒", "▒", "█", "█"],
-            ["█", "█", "█", "▒", "▒", "█", "█", "█"],
-            ["█", "█", "█", "▒", "▒", "█", "█", "█"],
-            ["█", "▒", "▒", "▒", "▒", "▒", "▒", "█"],
-            ["█", "▒", "█", "▒", "▒", "█", "▒", "█"],
-            ["█", "▒", "█", "█", "█", "█", "▒", "█"]
+            [0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 1, 1, 0, 0, 1, 1, 0],
+            [0, 0, 1, 1, 1, 1, 0, 0],
+            [0, 0, 1, 1, 1, 1, 1, 0],
+            [0, 1, 1, 1, 1, 1, 1, 1],
+            [1, 1, 1, 1, 1, 1, 1, 0],
+            [1, 1, 1, 1, 1, 1, 1, 0],
+            [0, 1, 1, 1, 1, 1, 0, 0]
         ];
 
         let hunger = 100;
@@ -73,10 +92,22 @@
 
         function printPanther() {
             const pantherImage = document.getElementById("panther-image");
-            pantherImage.textContent = "";
-                        for (let i = 0; i < pantherMatrix.length; i++) {
-                let row = pantherMatrix[i].join(" ");
-                pantherImage.innerHTML += row + "\n";
+            pantherImage.innerHTML = "";
+            for (let i = 0; i < pantherMatrix.length; i++) {
+                for (let j = 0; j < pantherMatrix[i].length; j++) {
+                    const pixel = document.createElement("div");
+                    pixel.classList.add("pixel");
+                    if (pantherMatrix[i][j] === 1) {
+                        if (i < 2) {
+                            pixel.classList.add("pixel-hunger");
+                        } else if (i < 4) {
+                            pixel.classList.add("pixel-happiness");
+                        } else {
+                            pixel.classList.add("pixel-energy");
+                        }
+                    }
+                    pantherImage.appendChild(pixel);
+                }
             }
         }
 
@@ -90,7 +121,6 @@
             if (hunger < 100) {
                 hunger += 10;
                 updateStats();
-                // Añade una animación de pulso al alimentar a la pantera
                 document.getElementById("panther-image").classList.add("panther-animation");
                 setTimeout(() => {
                     document.getElementById("panther-image").classList.remove("panther-animation");
@@ -102,7 +132,6 @@
             if (happiness < 100) {
                 happiness += 10;
                 updateStats();
-                // Añade una animación de pulso al jugar con la pantera
                 document.getElementById("panther-image").classList.add("panther-animation");
                 setTimeout(() => {
                     document.getElementById("panther-image").classList.remove("panther-animation");
@@ -114,7 +143,6 @@
             if (energy < 100) {
                 energy += 10;
                 updateStats();
-                // Añade una animación de pulso al descansar la pantera
                 document.getElementById("panther-image").classList.add("panther-animation");
                 setTimeout(() => {
                     document.getElementById("panther-image").classList.remove("panther-animation");
@@ -122,15 +150,12 @@
             }
         }
 
-        // Event Listeners para los botones
         document.getElementById("feed-button").addEventListener("click", feed);
         document.getElementById("play-button").addEventListener("click", play);
         document.getElementById("rest-button").addEventListener("click", rest);
 
-        // Actualizar la imagen de la pantera y los valores de los medidores
         printPanther();
         updateStats();
     </script>
 </body>
 </html>
-
