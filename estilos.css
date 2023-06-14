@@ -118,7 +118,7 @@ nav {
 }
 
 .menu-items {
-	display: none;
+	display: flex;
 	flex-direction: column;
 	position: fixed;
 	top: 45px;
@@ -169,7 +169,7 @@ nav {
 	transition: background-color 0.3s ease;
 }
 
-@media (640px ≤ width < 768px) {
+@media (width < 768px) {
 	.menu-icon {
 		display: block;
 	}
@@ -550,6 +550,7 @@ nav {
   align-items: center;
   gap: 20px;
   margin-top: 20px;
+ transform: matrix(0,1,1,0,0,0);
 }
 
 .contacto-info div {
