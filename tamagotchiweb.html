@@ -4,57 +4,32 @@
     <title>Tamagotchi de Pantera</title>
     <style>
         .panther {
-            font-family: monospace;
-            font-size: 20px;
-            line-height: 1;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .panther:hover {
-            transform: scale(1.1);
-        }
-
-        .button {
-            display: inline-block;
-            padding: 10px;
-            background-color: #e8e8e8;
-            border: none;
-            cursor: pointer;
-            margin-right: 10px;
-        }
-
-        .button:hover {
-            background-color: #d0d0d0;
-        }
-
-        .panther-animation {
-            animation-duration: 0.5s;
-            animation-iteration-count: infinite;
-            animation-direction: alternate;
+            display: flex;
+            flex-wrap: wrap;
+            width: 160px;
+            height: 160px;
+            transform: scale(4);
         }
 
         .pixel {
-            display: inline-block;
             width: 20px;
             height: 20px;
+        }
+
+        .pixel-black {
             background-color: #000;
         }
 
-        .pixel-hunger {
-            background-color: #FF0000;
+        .pixel-dark-grey {
+            background-color: #222;
         }
 
-        .pixel-happiness {
-            background-color: #00FF00;
+        .pixel-grey {
+            background-color: #888;
         }
 
-        .pixel-energy {
-            background-color: #0000FF;
-        }
-
-        @keyframes pantherPulse {
-            0% { transform: scale(1); }
-            100% { transform: scale(1.1); }
+        .pixel-light-grey {
+            background-color: #ccc;
         }
     </style>
 </head>
@@ -62,100 +37,89 @@
     <h1>Tamagotchi de Pantera</h1>
     <div id="game-container">
         <div id="panther-image" class="panther"></div>
-        <div id="stats">
-            <p id="hunger">Hambre: <span id="hunger-value">100</span></p>
-            <p id="happiness">Felicidad: <span id="happiness-value">100</span></p>
-            <p id="energy">Energía: <span id="energy-value">100</span></p>
-        </div>
-        <div id="actions">
-            <button id="feed-button" class="button">Alimentar</button>
-            <button id="play-button" class="button">Jugar</button>
-            <button id="rest-button" class="button">Descansar</button>
-        </div>
     </div>
 
     <script>
         const pantherMatrix = [
-            [0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 1, 1, 0, 0, 1, 1, 0],
-            [0, 0, 1, 1, 1, 1, 0, 0],
-            [0, 0, 1, 1, 1, 1, 1, 0],
-            [0, 1, 1, 1, 1, 1, 1, 1],
-            [1, 1, 1, 1, 1, 1, 1, 0],
-            [1, 1, 1, 1, 1, 1, 1, 0],
-            [0, 1, 1, 1, 1, 1, 0, 0]
+            [" ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
+            [" ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
+            [" ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
+            [" ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
+            [" ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
+            [" ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
+            [" ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
+            [" ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
+            [" ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
+            [" ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
+            [" ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
+            [" ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
+            [" ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
+            [" ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
+            [" ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
+            [" ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "]
         ];
 
-        let hunger = 100;
-        let happiness = 100;
-        let energy = 100;
+        function drawPanther() {
+            const pantherContainer = document.getElementById("panther-image");
+            pantherContainer.innerHTML = "";
 
-        function printPanther() {
-            const pantherImage = document.getElementById("panther-image");
-            pantherImage.innerHTML = "";
-            for (let i = 0; i < pantherMatrix.length; i++) {
-                for (let j = 0; j < pantherMatrix[i].length; j++) {
+            for (let row = 0; row < pantherMatrix.length; row++) {
+                for (let col = 0; col < pantherMatrix[row].length; col++) {
                     const pixel = document.createElement("div");
-                    pixel.classList.add("pixel");
-                    if (pantherMatrix[i][j] === 1) {
-                        if (i < 2) {
-                            pixel.classList.add("pixel-hunger");
-                        } else if (i < 4) {
-                            pixel.classList.add("pixel-happiness");
-                        } else {
-                            pixel.classList.add("pixel-energy");
-                        }
+                    pixel.className = "pixel";
+
+                    switch (pantherMatrix[row][col]) {
+                        case "#":
+                            pixel.classList.add("pixel-black");
+                            break;
+                        case "@":
+                            pixel.classList.add("pixel-dark-grey");
+                            break;
+                        case "%":
+                            pixel.classList.add("pixel-grey");
+                            break;
+                        case ".":
+                            pixel.classList.add("pixel-light-grey");
+                            break;
                     }
-                    pantherImage.appendChild(pixel);
+
+                    pantherContainer.appendChild(pixel);
                 }
             }
         }
 
-        function updateStats() {
-            document.getElementById("hunger-value").textContent = hunger;
-            document.getElementById("happiness-value").textContent = happiness;
-            document.getElementById("energy-value").textContent = energy;
+        function animatePanther() {
+            let frame = 0;
+            setInterval(() => {
+                if (frame % 2 === 0) {
+                    pantherMatrix[5][8] = "#";
+                    pantherMatrix[5][9] = "#";
+                    pantherMatrix[5][10] = "#";
+                    pantherMatrix[6][8] = "#";
+                    pantherMatrix[6][9] = "#";
+                    pantherMatrix[6][10] = "#";
+                    pantherMatrix[7][8] = "#";
+                    pantherMatrix[7][9] = "#";
+                    pantherMatrix[7][10] = "#";
+                } else {
+                    pantherMatrix[5][8] = ".";
+                    pantherMatrix[5][9] = "@";
+                    pantherMatrix[5][10] = ".";
+                    pantherMatrix[6][8] = "#";
+                    pantherMatrix[6][9] = "#";
+                    pantherMatrix[6][10] = "#";
+                    pantherMatrix[7][8] = ".";
+                    pantherMatrix[7][9] = "@";
+                    pantherMatrix[7][10] = ".";
+                }
+
+                drawPanther();
+                frame++;
+            }, 500);
         }
 
-        function feed() {
-            if (hunger < 100) {
-                hunger += 10;
-                updateStats();
-                document.getElementById("panther-image").classList.add("panther-animation");
-                setTimeout(() => {
-                    document.getElementById("panther-image").classList.remove("panther-animation");
-                }, 500);
-            }
-        }
-
-        function play() {
-            if (happiness < 100) {
-                happiness += 10;
-                updateStats();
-                document.getElementById("panther-image").classList.add("panther-animation");
-                setTimeout(() => {
-                    document.getElementById("panther-image").classList.remove("panther-animation");
-                }, 500);
-            }
-        }
-
-        function rest() {
-            if (energy < 100) {
-                energy += 10;
-                updateStats();
-                document.getElementById("panther-image").classList.add("panther-animation");
-                setTimeout(() => {
-                    document.getElementById("panther-image").classList.remove("panther-animation");
-                }, 500);
-            }
-        }
-
-        document.getElementById("feed-button").addEventListener("click", feed);
-        document.getElementById("play-button").addEventListener("click", play);
-        document.getElementById("rest-button").addEventListener("click", rest);
-
-        printPanther();
-        updateStats();
+        drawPanther();
+        animatePanther();
     </script>
 </body>
 </html>
