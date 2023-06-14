@@ -63,8 +63,6 @@
         </div>
     </div>
 
-
-
     <script>
         const pantherMatrix = [
             [" ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
@@ -116,7 +114,8 @@
 
         function animatePanther() {
             let frame = 0;
-            setInterval(() => {
+            const pantherContainer = document.getElementById("panther-image");
+            const animationInterval = setInterval(() => {
                 if (frame % 2 === 0) {
                     pantherMatrix[5][8] = "#";
                     pantherMatrix[5][9] = "#";
@@ -141,13 +140,17 @@
 
                 drawPanther();
                 frame++;
+
+                if (frame >= 6) {
+                    clearInterval(animationInterval);
+                }
             }, 500);
         }
 
         drawPanther();
         animatePanther();
     </script>
-     <script>
+    <script>
         const pantherImage = document.getElementById("panther-image");
         const hungerValue = document.getElementById("hunger-value");
         const happinessValue = document.getElementById("happiness-value");
