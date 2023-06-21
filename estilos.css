@@ -491,8 +491,8 @@ nav {
   text-align: center; 
 }
 .juego  img {
-  width: 50%;
-  height: 50px; 
+  width: 250px;
+  height: 270px; 
   object-fit: cover; 
 }
 
