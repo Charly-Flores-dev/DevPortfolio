@@ -490,7 +490,7 @@ nav {
   margin-top: 30px;
   text-align: center; 
 }
-.juego .juego img {
+.juego  img {
   width: 50%;
   height: 50px; 
   object-fit: cover; 
