@@ -468,7 +468,7 @@ nav {
 
 /* Estilos para el apartado de Juego */
 .juego {
-  background-color: #007aff;
+  background-color: #f7f7f7;
   padding: 50px;
   text-align: center; 
   overflow: hidden; /* Agregamos un overflow para evitar desbordamientos */
@@ -552,8 +552,7 @@ nav {
   align-items: center;
   justify-content: center;
   gap: 30px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+
 
 }
 
