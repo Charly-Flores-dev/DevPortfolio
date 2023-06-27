@@ -98,6 +98,45 @@ nav {
 #menu-toggle {
 	display: none;
 }
+.menu {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: rgb(0, 0, 0);
+	z-index: 100;
+}
+
+.menu-icon {
+	display: none;
+}
+
+.menu-items {
+	display: flex; 
+	justify-content: flex-end; 
+}
+
+.menu-items li {
+	list-style: none;
+	margin-left: 20px;
+}
+
+.menu-items a {
+	color: #fff;
+	text-decoration: none;
+	padding: 10px;
+	transition: background-color 0.3s ease;
+}
+
+.menu-items a:hover {
+	background: rgb(83, 172, 213, 0.5);
+	backdrop-filter: blur(1px);
+}
+
+@media (max-width: 767px) {
+	#menu-toggle {
+	display: none;
+}
 
 .menu {
 	position: fixed;
@@ -169,10 +208,6 @@ nav {
 	transition: background-color 0.3s ease;
 }
 
-@media (max-width: 767px) {
-	.menu-icon {
-		display: block;
-	}
 
 	.inicio h1,
 	.inicio p {
