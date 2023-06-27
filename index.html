@@ -242,7 +242,21 @@ modoToggle.addEventListener('click', () => {
   }
 });
 </script>
-
+<script>
+  // Obtener la lista de elementos del menú
+  const menuItems = document.querySelector('.menu-items');
+  
+  // Obtener todos los enlaces dentro de la lista del menú
+  const menuLinks = menuItems.querySelectorAll('a');
+  
+  // Agregar un evento de clic a cada enlace para ocultar la lista del menú
+  menuLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+      // Desmarcar la casilla de verificación del menú
+      document.getElementById('menu-toggle').checked = false;
+    });
+  });
+</script>
  
 </body>
 </html>
