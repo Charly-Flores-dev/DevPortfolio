@@ -46,19 +46,18 @@
 </div>
 
    
-<!-- Sección de inicio -->
 <section id="inicio" class="inicio">
   <div class="contenido">
     <h1>Bienvenido a mi portafolio</h1>
     <p>¡Hola! Soy Carlos Flores, originario de Saltillo, Coahuila, estudiante de ingeniería en desarrollo de software. Me apasiona el mundo de la tecnología y me gusta trabajar en proyectos desafiantes que me permitan seguir aprendiendo y creciendo como profesional.</p>
-    <a href="#contacto" class="boton">Contacto</a>
-       <a href="#">
-    <button class="cv-icon">
-      <img src="https://www.svgrepo.com/show/262644/curriculum-vitae-resume.svg" alt="Descargar CV">
-    </button>
-    <span class="message">Descargar CV</span>
-  </a>
-</div>
+    <div>
+      <a href="#contacto" class="boton">Contacto</a>
+      <button class="cv-icon">
+        <img src="https://www.svgrepo.com/show/262644/curriculum-vitae-resume.svg" alt="Descargar CV">
+      </button>
+      <span class="message">Descargar CV</span>
+    </div>
+  </div>
 </section>
 
 <!-- Sección "Acerca de" -->
@@ -264,10 +263,13 @@ modoToggle.addEventListener('click', () => {
   });
 </script>
  <script>   
-    function showMessage() {
-  var message = document.getElementById("message");
-  message.style.display = "block";
+ function showMessage() {
+  const message = document.getElementById('message');
+  if (message) {
+    message.style.display = 'block';
+  }
 }
+
 
 function hideMessage() {
   const message = document.getElementById('message');
