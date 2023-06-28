@@ -341,9 +341,11 @@ nav {
   background-color: #555;
 }
 
-.inicio .cv-icon {
-  display: inline-block;
-  margin-left: 10px;
+.cv-icon {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
   cursor: pointer;
   transition: transform 0.3s ease;
 }
