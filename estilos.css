@@ -10,6 +10,7 @@ html {
 }
 
 body {
+	padding-top: 50px;
 	font-family: 'Anonymous Pro';
 	font-size: 16px;
 	line-height: 1.5;
@@ -73,11 +74,10 @@ body.dark-mode {
 /* Barra de navegación */
 nav {
 	display: flex;
-	justify-content: space-between;
-	align-items: center;
+    align-items: center;
 	background-color: #fff;
 	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-	padding: 10px 20px;
+	padding: 10px 70px;
 }
 
 .logo h4 {
@@ -133,18 +133,20 @@ nav {
 	backdrop-filter: blur(1px);
 }
 
-@media (max-width: 767px) {
+@media (max-width: 767px)
+{
 	#menu-toggle {
 	display: none;
 }
 
 .menu {
 	position: fixed;
-	top: 0;
-	left: 0;
+	top: 0px;
+	left: 10px;
+	right:10px;
 	width: 100%;
 	background-color: rgb(0, 0, 0);
-	z-index: 100;
+	z-index: 99;
 }
 
 .menu-icon {
@@ -208,21 +210,22 @@ nav {
 	transition: background-color 0.3s ease;
 }
 
-
+	.inicio,
 	.inicio h1,
 	.inicio p {
 		margin-left: 10px;
 		margin-right: 10px;
+		margin-top:10px;
 	}
 
 	.nav-menu {
-		position: fixed;
+		position: ;
 		top: 0;
 		left: 0;
-		width: 100%;
+		width: 00%;
 		background-color: rgba(0, 0, 0, 0.8);
 		z-index: 99;
-		padding: 10px;
+		padding: 0px;
 	}
 
 	.nav-menu ul {
@@ -262,7 +265,7 @@ nav {
 
  /* Sección de inicio */
 .inicio {
-  height: 100vh;
+  height: 120vh;
   background-image: url("https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80");
   background-position: center;
   background-size: cover;
@@ -637,4 +640,4 @@ footer a {
 footer a:hover {
   text-decoration: underline;
 }
-/* Rev. 05.28 */
+/* Rev. 06.27 */
