@@ -52,7 +52,10 @@
     <h1>Bienvenido a mi portafolio</h1>
     <p>¡Hola! Soy Carlos Flores, originario de Saltillo, Coahuila, estudiante de ingeniería en desarrollo de software. Me apasiona el mundo de la tecnología y me gusta trabajar en proyectos desafiantes que me permitan seguir aprendiendo y creciendo como profesional.</p>
     <a href="#contacto" class="boton">Contacto</a>
-  </div>
+     <a href="ruta-a-tu-cv.pdf" download>
+    <img src="https://www.svgrepo.com/show/262644/curriculum-vitae-resume.svg" alt="Descargar CV" class="cv-icon" onmouseover="showMessage()" onmouseout="hideMessage()">
+  </a>
+</div>
 </section>
 
 <!-- Sección "Acerca de" -->
@@ -257,6 +260,16 @@ modoToggle.addEventListener('click', () => {
     });
   });
 </script>
- 
+ <script>   
+    function showMessage() {
+  var message = document.getElementById("message");
+  message.style.display = "block";
+}
+
+function hideMessage() {
+  var message = document.getElementById("message");
+  message.style.display = "none";
+}
+</script> 
 </body>
 </html>
