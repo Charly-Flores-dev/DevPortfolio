@@ -326,8 +326,42 @@ nav {
   background-color: #fff;
   color: #333;
 }
+.inicio a {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
 
-  
+.inicio img {
+  width: 24px;
+  margin-right: 10px;
+}
+.cv-icon {
+  width: 35px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.cv-icon:hover {
+  transform: matrix(0, 1, 1, 0, 0, 0);
+}
+
+
+.message {
+  display: none;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 5px 10px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.cv-icon:hover + .message {
+  display: block;
+}
  /* Sección "Acerca de" */
 .acerca-de {
   padding: 100px 0;
