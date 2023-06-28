@@ -270,9 +270,12 @@ modoToggle.addEventListener('click', () => {
 }
 
 function hideMessage() {
-  var message = document.getElementById("message");
-  message.style.display = "none";
+  const message = document.getElementById('message');
+  if (message) {
+    message.style.display = 'none';
+  }
 }
+
 </script> 
 </body>
 </html>
