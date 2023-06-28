@@ -326,24 +326,6 @@ nav {
   background-color: #fff;
   color: #333;
 }
-.inicio {
-  background-color: #f9f9f9;
-  padding: 50px;
-}
-
-.inicio .contenido {
-  text-align: center;
-}
-
-.inicio h1 {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-.inicio p {
-  font-size: 16px;
-  margin-bottom: 20px;
-}
 
 .inicio a.boton {
   display: inline-block;
