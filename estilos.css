@@ -326,28 +326,51 @@ nav {
   background-color: #fff;
   color: #333;
 }
-.inicio a {
-  display: flex;
-  align-items: center;
-  margin-top: 20px;
+.inicio {
+  background-color: #f9f9f9;
+  padding: 50px;
 }
 
-.inicio img {
-  width: 24px;
-  margin-right: 10px;
+.inicio .contenido {
+  text-align: center;
 }
-.cv-icon {
-  width: 35px;
+
+.inicio h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.inicio p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.inicio a.boton {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.inicio a.boton:hover {
+  background-color: #555;
+}
+
+.inicio .cv-icon {
+  display: inline-block;
+  margin-left: 10px;
   cursor: pointer;
   transition: transform 0.3s ease;
 }
 
-.cv-icon:hover {
-  transform: matrix(0, 1, 1, 0, 0, 0);
+.inicio .cv-icon img {
+  width: 35px;
 }
 
-
-.message {
+.inicio .message {
   display: none;
   position: absolute;
   top: -30px;
@@ -359,9 +382,14 @@ nav {
   border-radius: 5px;
 }
 
-.cv-icon:hover + .message {
+.inicio .cv-icon:hover {
+  transform: matrix(0, 1, 1, 0, 0, 0);
+}
+
+.inicio .cv-icon:hover + .message {
   display: block;
 }
+
  /* Sección "Acerca de" */
 .acerca-de {
   padding: 100px 0;
