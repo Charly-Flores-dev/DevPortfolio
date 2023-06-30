@@ -77,18 +77,22 @@ nav {
     align-items: center;
 	background-color: #fff;
 	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-	padding: 10px 70px;
+	padding: 10px 55px;
+	margin-right: auto;
 }
 
 .logo h4 {
 	font-size: 18px;
 	color: #fff;
 	margin-right: auto;
+	
+	
 }
 
 .logo img {
 	display: block;
-	margin-right: 10px;
+	
+
 }
 
 .logo span {
@@ -134,26 +138,34 @@ nav {
 }
 
 @media (max-width: 767px)
+
 {
 	#menu-toggle {
 	display: none;
 }
-
+.nav-bar {
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+	
 .menu {
 	position: fixed;
-	top: 0px;
-	left: 10px;
-	right:10px;
-	width: 100%;
+	
+
 	background-color: rgb(0, 0, 0);
-	z-index: 99;
+	
 }
 
 .menu-icon {
 	display: block;
 	cursor: pointer;
 	color: #fff;
-	padding: 10px;
+	padding: 0px;
 	font-size: 10px;
 	right: 0;
 }
@@ -210,23 +222,8 @@ nav {
 	transition: background-color 0.3s ease;
 }
 
-	.inicio,
-	.inicio h1,
-	.inicio p {
-		margin-left: 10px;
-		margin-right: 10px;
-		margin-top:10px;
-	}
 
-	.nav-menu {
-		position: ;
-		top: 0;
-		left: 0;
-		width: 00%;
-		background-color: rgba(0, 0, 0, 0.8);
-		z-index: 99;
-		padding: 0px;
-	}
+
 
 	.nav-menu ul {
 		display: flex;
@@ -237,7 +234,7 @@ nav {
 	}
 
 	.nav-menu ul li {
-		margin-left: 20px;
+		margin-left: 10px;
 	}
 
 	.nav-menu ul a {
@@ -690,3 +687,4 @@ footer a:hover {
   text-decoration: underline;
 }
 /* Rev. 06.27 */
+
