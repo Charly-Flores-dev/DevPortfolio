@@ -74,7 +74,7 @@ body.dark-mode {
 /* Barra de navegación */
 nav {
 	display: flex;
-    align-items: center;
+  align-items: center;
 	background-color: #fff;
 	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 	padding: 10px 55px;
@@ -137,12 +137,17 @@ nav {
 	backdrop-filter: blur(1px);
 }
 
-@media (max-width: 767px)
-
-{
+@media (max-width: 767px){
 	#menu-toggle {
 	display: none;
 }
+.inicio,
+	.inicio h1,
+	.inicio p,
+  .inicio .contenido {
+		margin-top:15px;
+   font-size: 5px;
+	}
 .nav-bar {
   width: 100%;
   background-color: #333;
@@ -154,10 +159,10 @@ nav {
 }
 	
 .menu {
+  width: 100%;
 	position: fixed;
-	
-
-	background-color: rgb(0, 0, 0);
+	padding: 10px;
+  background-color: rgb(0, 0, 0);
 	
 }
 
@@ -165,7 +170,7 @@ nav {
 	display: block;
 	cursor: pointer;
 	color: #fff;
-	padding: 0px;
+	padding: 10px;
 	font-size: 10px;
 	right: 0;
 }
@@ -174,12 +179,14 @@ nav {
 	display: none;
 	flex-direction: column;
 	position: fixed;
+  width: 100%;
 	top: 45px;
 	left: 0;
 	right: 0;
 	background: rgba(0, 0, 0, 0.5);
 	backdrop-filter: blur(0.9px);
 	padding: 10px;
+  overflow-x: hidden;
 }
 
 .menu-items li {
@@ -401,7 +408,7 @@ nav {
 /* Sección "Habilidades" */
 .palabras-animadas span {
   font-family: 'Anonymous Pro', monospace;
-  font-size: 50px;
+  font-size: 48px;
   font-weight: bold;
   color: #007aff;
   opacity: 0;
