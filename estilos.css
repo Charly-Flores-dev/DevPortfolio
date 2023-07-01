@@ -343,7 +343,7 @@ nav {
 }
 
 .inicio .cv-icon {
-  margin-top: 30px; */
+  margin-top: 30px;
   cursor: pointer;
   transition: transform 0.3s ease;
  
@@ -401,7 +401,7 @@ nav {
 /* Sección "Habilidades" */
 .palabras-animadas span {
   font-family: 'Anonymous Pro', monospace;
-  font-size: 60px;
+  font-size: 50px;
   font-weight: bold;
   color: #007aff;
   opacity: 0;
@@ -450,8 +450,13 @@ nav {
 .habilidades {
   background-color: #f5f5f5;
   padding: 80px 0;
+  
 }
-
+.habilidades h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  text-align: center; 
+}
 .habilidad {
   margin-bottom: 40px;
 }
@@ -513,7 +518,12 @@ nav {
   text-align: center; 
 }
 
-/* Ajusto el tamaño de las imágenes en los proyectos */
+.proyectos h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  text-align: center; 
+}
+
 .proyectos .proyecto img {
   width: 100%;
   height: 100px; 
@@ -529,8 +539,9 @@ nav {
 }
 
 .practicas h2 {
-  font-size: 24px;
-  margin-bottom: 10px;
+  font-size: 32px;
+  margin-bottom: 20px;
+  text-align: center; 
 }
 
 .practicas p {
@@ -686,5 +697,4 @@ footer a {
 footer a:hover {
   text-decoration: underline;
 }
-/* Rev. 06.27 */
-
+/* Rev. 07.01 */
