@@ -231,6 +231,7 @@
 
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-235XB3XMLP"></script>
+    
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -239,39 +240,39 @@
 </script>
 
 <script>
-// Obtener el elemento del interruptor de modo
+
 const modoToggle = document.querySelector('.modo-toggle');
-// Obtener el elemento del ícono de modo
+
 const modoIcono = document.querySelector('#modo-icono');
 
-// Agregar un evento de clic al interruptor de modo
+
 modoToggle.addEventListener('click', () => {
-  // Alternar la clase 'dark-mode' en el elemento body
+ 
   document.body.classList.toggle('dark-mode');
 
-  // Cambiar el ícono del modo según el estado
   if (document.body.classList.contains('dark-mode')) {
-    modoIcono.textContent = 'light_mode'; // Cambiar al ícono de modo claro
+    modoIcono.textContent = 'light_mode';
   } else {
-    modoIcono.textContent = 'dark_mode'; // Cambiar al ícono de modo oscuro
+    modoIcono.textContent = 'dark_mode';
   }
 });
 </script>
 <script>
-  // Obtener la lista de elementos del menú
+
   const menuItems = document.querySelector('.menu-items');
   
-  // Obtener todos los enlaces dentro de la lista del menú
+
   const menuLinks = menuItems.querySelectorAll('a');
   
-  // Agregar un evento de clic a cada enlace para ocultar la lista del menú
+  
   menuLinks.forEach((link) => {
     link.addEventListener('click', () => {
-      // Desmarcar la casilla de verificación del menú
+   
       document.getElementById('menu-toggle').checked = false;
     });
   });
 </script>
+    
  <script>   
  function showMessage() {
   const message = document.getElementById('message');
