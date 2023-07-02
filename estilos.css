@@ -541,13 +541,16 @@ nav {
 
 /* Sección proyectos */
 .proyectos {
+   margin: 0 auto;
   background-color: #f2f2f2;
-  padding: 50px;
+  padding: 30px;
   text-align: center; 
   overflow: hidden; /* Agregamos un overflow para evitar desbordamientos */
 }
 
 .proyectos .contenido {
+ max-width: 1260px;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 30px;
@@ -586,6 +589,8 @@ nav {
   line-height: 1.5;
 }
 .practicas .contenido {
+  max-width: 1260px;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 30px;
@@ -617,6 +622,8 @@ nav {
   line-height: 1.5;
 }
 .juego .contenido {
+  max-width: 1260px;
+  margin: 0 auto;
   display: grid;
   grid-gap: 30px;
   margin-top: 30px;
