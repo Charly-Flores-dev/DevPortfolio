@@ -70,6 +70,12 @@ body.dark-mode {
 	-webkit-font-smoothing: antialiased;
 	color: white;
 }
+.logo nav.menu a[href="eng.html"] img {
+  width: 30px; 
+  height: 40px; 
+  border-radius: 50%;
+}
+
 
 /* Barra de navegación */
 nav {
