@@ -1,0 +1,744 @@
+/* Estilos generales */
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	padding-top: 50px;
+	font-family: 'Anonymous Pro';
+	font-size: 16px;
+	line-height: 1.5;
+	color: #333;
+	background-color: f5f5f5;
+}
+
+/* Modo nocturno */
+body.dark-mode {
+	background-color: #000;
+	color: #007aff;
+}
+
+#modo-toggle {
+	display: none;
+	cursor: pointer;
+}
+
+.dark-mode .logo h4 {
+	color: #000;
+}
+
+.dark-mode .menu {
+	background-color: #fff;
+}
+
+.dark-mode .menu a {
+	color: #007aff;
+	background: rgba(238, 228, 228, 0.7);
+	backdrop-filter: blur(0.9px);
+}
+
+.dark-mode .menu-icon i {
+	color: rgb(6, 6, 6);
+}
+
+.dark-mode .modo-toggle i {
+	color: rgb(15, 14, 14);
+}
+
+.dark-mode .modo-toggle i:hover {
+	color: rgb(3, 3, 3);
+}
+
+.material-icons {
+	font-family: 'Material Icons';
+	font-weight: normal;
+	font-style: normal;
+	font-size: 24px;
+	line-height: 1;
+	letter-spacing: normal;
+	text-transform: none;
+	display: inline-block;
+	white-space: nowrap;
+	word-wrap: normal;
+	direction: ltr;
+	-webkit-font-smoothing: antialiased;
+	color: white;
+}
+
+/* Barra de navegación */
+nav {
+	display: flex;
+  align-items: center;
+	background-color: #fff;
+	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+	padding: 10px 55px;
+	margin-right: auto;
+}
+
+.logo h4 {
+	font-size: 18px;
+	color: #fff;
+	margin-right: auto;
+	
+	
+}
+
+.logo img {
+	display: block;
+	
+
+}
+
+.logo span {
+	font-weight: bold;
+}
+
+#menu-toggle {
+	display: none;
+}
+.menu {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: rgb(0, 0, 0);
+	z-index: 100;
+}
+
+.menu-icon {
+	display: none;
+}
+
+.menu-items {
+	display: flex; 
+	justify-content: flex-end; 
+}
+
+.menu-items li {
+	list-style: none;
+	margin-left: 20px;
+}
+
+.menu-items a {
+	color: #fff;
+	text-decoration: none;
+	padding: 10px;
+	transition: background-color 0.3s ease;
+}
+
+.menu-items a:hover {
+	background: rgb(83, 172, 213, 0.5);
+	backdrop-filter: blur(1px);
+}
+
+@media (max-width: 767px){
+	#menu-toggle {
+	display: none;
+}
+.iinicio,
+	.inicio h1,
+	.inicio p,
+  .inicio .contenido {
+		margin-top:15px;
+   font-size: 5px;
+	}
+  .inicio h1 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: #000;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(1px);
+    padding: 10px;
+    border-radius: 12px;
+    text-align: center;
+  }
+  
+  .inicio p {
+    position: relative;
+    z-index: 1;
+    font-size: 10px;
+    margin-bottom: 20px;
+    max-width: 300px;
+    line-height: 1.6;
+    color: #000;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(1px);
+    padding: 10px;
+    border-radius: 12px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+.nav-bar {
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+	
+.menu {
+  width: 100%;
+	position: fixed;
+	padding: 10px;
+  background-color: rgb(0, 0, 0);
+	
+}
+
+.menu-icon {
+	display: block;
+	cursor: pointer;
+	color: #fff;
+	padding: 10px;
+	font-size: 10px;
+	right: 0;
+}
+
+.menu-items {
+	display: none;
+	flex-direction: column;
+	position: fixed;
+  width: 100%;
+	top: 45px;
+	left: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.5);
+	backdrop-filter: blur(0.9px);
+	padding: 10px;
+  overflow-x: hidden;
+}
+
+.menu-items li {
+	margin: 5px 0;
+}
+
+.menu-items a {
+	display: block;
+	padding: 7px;
+	color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  transition: background-color 0.3s ease;
+  }
+
+
+#menu-toggle:checked ~ .menu-items {
+	display: flex;
+}
+
+.menu-items a:hover {
+	background: rgb(83, 172, 213, 0.5);
+	backdrop-filter: blur(1px);
+}
+
+.menu-items ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.menu-items ul li {
+	margin-left: 20px;
+}
+
+.menu-items ul a {
+	color: #fff;
+	text-decoration: none;
+	padding: 10px;
+	transition: background-color 0.3s ease;
+}
+
+
+
+
+	.nav-menu ul {
+		display: flex;
+		justify-content: flex-end;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	.nav-menu ul li {
+		margin-left: 10px;
+	}
+
+	.nav-menu ul a {
+		color: #fff;
+		text-decoration: none;
+		padding: 10px;
+		transition: background-color 0.3s ease;
+	}
+
+	.nav-menu ul a:hover {
+		background-color: rgb(83, 172, 213, 0.5);
+		backdrop-filter: blur(1px);
+	}
+}
+
+.proyectos .contenido {
+	grid-template-columns: 1fr;
+}
+
+#contacto .contenedor {
+	grid-template-columns: 1fr;
+}
+
+
+
+ /* Sección de inicio */
+.inicio {
+  height: 120vh;
+  background-image: url("https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80");
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  flex-direction: column;
+}
+
+.inicio .contenido {	
+ margin-top: 100px; 
+ text-align: center;
+}
+
+.inicio h1 {
+  font-size: 60px;
+  margin-bottom: 20px;
+  color: #000;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(1px);
+  padding: 10px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.inicio p {
+  position: relative;
+  z-index: 1;
+  font-size: 20px;
+  margin-bottom: 20px;
+  max-width: 600px;
+  line-height: 1.6;
+  color: #000;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(1px);
+  padding: 10px;
+  border-radius: 12px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.boton {
+  display: inline-block;
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  text-align: center;
+  margin-top: 20px;
+}
+
+
+.boton:hover {
+  background-color: #fff;
+  color: #333;
+}
+
+.inicio a.boton {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.inicio a.boton:hover {
+  background-color: #555;
+}
+
+.inicio a.boton:hover {
+  background-color: #555;
+}
+
+.inicio .cv-icon {
+  margin-top: 30px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+ 
+}
+
+.inicio .cv-icon img {
+  width: 45px;
+}
+
+.inicio .message {
+  display: none;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 5px 10px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.inicio .cv-icon:hover {
+  transform: matrix(0, 1, 1, 0, 0, 0);
+}
+
+.inicio .cv-icon:hover + .message {
+  display: block;
+}
+
+
+ /* Sección "Acerca de" */
+.acerca-de {
+  padding: 100px 0;
+  background-color: #f7f7f7;
+}
+
+.acerca-de .contenido {
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+}
+
+.acerca-de h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.acerca-de p {
+  font-size: 20px;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+  
+/* Sección "Habilidades" */
+.palabras-animadas span {
+  font-family: 'Anonymous Pro', monospace;
+  font-size: 48px;
+  font-weight: bold;
+  color: #007aff;
+  opacity: 0;
+  animation: escribir 8s ease-in-out infinite alternate;
+}
+
+.palabras-animadas span:nth-child(1) {
+  animation-delay: 1s;
+}
+
+.palabras-animadas span:nth-child(2) {
+  animation-delay: 1.5s;
+}
+
+.palabras-animadas span:nth-child(3) {
+  animation-delay: 2s;
+}
+
+.palabras-animadas span:nth-child(4) {
+  animation-delay: 2.5s;
+}
+
+.palabras-animadas span:nth-child(5) {
+  animation-delay: 3s;
+}
+
+.palabras-animadas span:nth-child(6) {
+  animation-delay: 3.5s;
+}
+
+.palabras-animadas span:nth-child(7) {
+  animation-delay: 4s;
+}
+
+@keyframes escribir {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.habilidades {
+  background-color: #ffffff;
+  max-width: 1260px;
+  margin: 0 auto;
+  padding: 10px;
+}
+  
+
+.habilidades h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  text-align: center; 
+}
+.habilidad {
+  margin-bottom: 40px;
+}
+
+.habilidad h3 {
+  margin-bottom: 10px;
+}
+
+.barra {
+  height: 10px;
+  background-color: #ddd;
+  border-radius: 5px;
+  position: relative;
+}
+
+.porcentaje {
+  height: 100%;
+  background-color: #007aff;
+  border-radius: 5px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  transition: width 1s ease;
+}
+
+.porcentaje::after {
+  content: attr(data-porcentaje) "%";
+  position: absolute;
+  right: -30px;
+  top: -20px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #007aff;
+}
+
+/* Animación de la barra de habilidades */
+.porcentaje[data-porcentaje="60"] {
+  width: 60%;
+}
+
+.porcentaje[data-porcentaje="30"] {
+  width: 30%;
+}
+
+/* Sección proyectos */
+.proyectos {
+   margin: 0 auto;
+  background-color: #f2f2f2;
+  padding: 30px;
+  text-align: center; 
+  overflow: hidden; /* Agregamos un overflow para evitar desbordamientos */
+}
+
+.proyectos .contenido {
+ max-width: 1260px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+  margin-top: 30px;
+  text-align: center; 
+}
+
+.proyectos h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  text-align: center; 
+}
+
+.proyectos .proyecto img {
+  width: 100%;
+  height: 100px; 
+  object-fit: cover; 
+}
+
+/* Estilos para el apartado de Prácticas */
+.practicas {
+  background-color: #f2f2f2;
+  padding: 50px;
+  text-align: center; 
+  overflow: hidden; /* Agregamos un overflow para evitar desbordamientos */
+}
+
+.practicas h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  text-align: center; 
+}
+
+.practicas p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+.practicas .contenido {
+  max-width: 1260px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+  margin-top: 30px;
+  text-align: center; 
+}
+.practicas  img {
+  width: 100%;
+  height: 100px; 
+  object-fit: cover; 
+}
+
+/* Estilos para el apartado de Juego */
+.juego {
+   background-color: #f2f2f2;
+  padding: 50px;
+  text-align: center; 
+  overflow: hidden; /* Agregamos un overflow para evitar desbordamientos */
+}
+
+.juego h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  text-align: center; 
+}
+
+.juego p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+.juego .contenido {
+  max-width: 1260px;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 30px;
+  margin-top: 30px;
+  text-align: center; 
+}
+.juego  img {
+  width: 220px;
+  height: 270px; 
+  object-fit: cover; 
+}
+
+/* Sección "Contacto" */
+#contacto {
+  background-color: #f7f7f7;
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden; 
+}
+
+#contacto .contenedor {
+  display: grid;
+  grid-gap: 30px;
+}
+
+#contacto h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  text-align: center; 
+}
+
+#contacto form input,
+#contacto form textarea {
+  width: 100%;
+  padding: 10px;
+  font-family: 'Anonymous Pro';
+  font-size: 16px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  resize: none;
+}
+
+#contacto form input[type="submit"] {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+#contacto form input[type="submit"]:hover {
+  background-color: #fff;
+  color: #333;
+}
+
+
+
+ /* Iconos de contacto */
+.contacto-info {
+  background-color: #f7f7f7;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+
+
+}
+
+.contacto-info div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contacto-info img {
+  width: 35px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.contacto-info img:hover {
+  transform: matrix(0, 1, 1, 0, 0, 0);
+}
+
+
+.contacto-info span {
+  font-size: 16px;
+}
+
+.contacto-info a:hover {
+  color: #0077b5;
+}
+  
+  /* Footer */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+  font-size: 14px;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+/* Rev. 07.01 */
