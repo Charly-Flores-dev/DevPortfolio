@@ -70,9 +70,9 @@ body.dark-mode {
 	-webkit-font-smoothing: antialiased;
 	color: white;
 }
-.logo nav.menu a[href="eng.html"] img {
-  width: 30px; 
-  height: 40px; 
+.logo nav.menu a[href="index.html"] img {
+  width: 33px; 
+  height: 50px; 
   border-radius: 50%;
 }
 
