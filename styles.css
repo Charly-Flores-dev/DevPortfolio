@@ -329,7 +329,7 @@ button::after {
   --move5: inset(45% 0 6% 0);
   --move6: inset(14% 0 61% 0);
   clip-path: var(--move1);
-  content: 'GLITCH';
+  content: 'Contact';
   position: absolute;
   top: 0;
   left: 0;
@@ -414,6 +414,39 @@ button:hover {
   }
 }
 
+.button {
+	display: inline-block;
+	background-color: #333;
+	color: #fff;
+	padding: 10px 20px;
+	border-radius: 8px;
+	text-decoration: none;
+	transition: all 0.3s ease;
+	text-align: center;
+	margin-top: 20px;
+}
+
+.button:hover {
+	background-color: #fff;
+	color: #333;
+}
+.home a.button {
+	display: inline-block;
+	padding: 10px 20px;
+	background-color: #333;
+	color: #fff;
+	text-decoration: none;
+	font-size: 16px;
+	border-radius: 5px;
+}
+
+.home a.button:hover {
+	background-color: #555;
+}
+
+.home a.button:hover {
+	background-color: #555;
+}
 
 .home .cv-icon {
 	margin-top: 30px;
