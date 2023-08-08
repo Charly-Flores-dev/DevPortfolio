@@ -138,6 +138,19 @@ nav {
 	background: rgb(83, 172, 213, 0.5);
 	backdrop-filter: blur(1px);
 }
+
+ .glitch-button {
+      display: inline-block;
+      padding: 10px 50px;
+      font-size: 20px;
+      border: none;
+      border-radius: 5px;
+      color: black;
+      background-color: transparent;
+      position: relative;
+      text-decoration: none;
+      cursor: pointer;
+    }
 button,button::after {
   padding: 10px 50px;
   font-size: 20px;
@@ -413,7 +426,17 @@ button:hover {
 	margin-left: auto;
 	margin-right: auto;
 }
-
+  .glitch-button {
+      padding: 10px 50px;
+      font-size: 20px;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      background-color: transparent;
+      position: relative;
+      cursor: pointer;
+      overflow: hidden;
+    }
 button,button::after {
   padding: 10px 50px;
   font-size: 20px;
@@ -551,15 +574,6 @@ button:hover {
 	background-color: #555;
 }
 
-.home .cv-icon {
-	margin-top: 30px;
-	cursor: pointer;
-	transition: transform 0.3s ease;
-}
-
-.home .cv-icon img {
-	width: 45px;
-}
 
 .home .message {
 	display: none;
@@ -573,13 +587,7 @@ button:hover {
 	border-radius: 5px;
 }
 
-.home .cv-icon:hover {
-	transform: matrix(0, 1, 1, 0, 0, 0);
-}
 
-.home .cv-icon:hover + .message {
-	display: block;
-}
 
 
 /* Section "About" */
