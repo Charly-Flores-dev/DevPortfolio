@@ -83,8 +83,8 @@
     </div>
 
 
-<script>
-    // Código JavaScript (con matriz actualizada y cambios visuales)
+script>
+    // Código JavaScript (con animaciones y ajustes interactivos)
 
     const pantherImage = document.getElementById("panther-image");
     const hungerValue = document.getElementById("hunger-value");
@@ -105,52 +105,42 @@
     }
 
     function updateExpression() {
-        pantherImage.innerHTML = ""; // Limpiar la imagen existente
-
-        for (let row = 0; row < pantherMatrix.length; row++) {
-            for (let col = 0; col < pantherMatrix[row].length; col++) {
-                const pixel = document.createElement("div");
-                pixel.className = "pixel";
-
-                switch (pantherMatrix[row][col]) {
-                    case "E":
-                        if (happiness > 70) {
-                            pixel.classList.add("pixel-light-grey");
-                        } else if (happiness < 30) {
-                            pixel.classList.add("pixel-dark-grey");
-                        } else {
-                            pixel.classList.add("pixel-grey");
-                        }
-                        break;
-                    case "M":
-                        if (happiness > 70) {
-                            pixel.classList.add("pixel-dark-grey");
-                        } else if (happiness < 30) {
-                            pixel.classList.add("pixel-black");
-                        } else {
-                            pixel.classList.add("pixel-grey");
-                        }
-                        break;
-                    case "H":
-                        if (happiness > 70) {
-                            pixel.classList.add("pixel-light-grey");
-                        } else if (happiness < 30) {
-                            pixel.classList.add("pixel-dark-grey");
-                        } else {
-                            pixel.classList.add("pixel-grey");
-                        }
-                        break;
-                }
-
-                pantherImage.appendChild(pixel);
-            }
+        const expression = document.getElementById("expression");
+        if (hunger < 30) {
+            expression.textContent = "😟";
+        } else if (energy < 30) {
+            expression.textContent = "😴";
+        } else {
+            expression.textContent = "😄";
         }
     }
 
-    // Resto del código (alimentar, jugar, dormir, actualizar necesidades, etc.)
+    function aiDecision() {
+        if (hunger < 30) {
+            feed();
+        } else if (energy < 30) {
+            sleep();
+        } else {
+            play();
+        }
+    }
 
-    setInterval(updateNeeds, 10000); // Actualizar necesidades cada 10 segundos
-    setInterval(updateExpression, 2000); // Actualizar expresión facial cada 2 segundos
+    function updateNeeds() {
+        hunger -= 5;
+        happiness -= 3;
+        energy -= 2;
+
+        if (hunger < 0) hunger = 0;
+        if (happiness < 0) happiness = 0;
+        if (energy < 0) energy = 0;
+
+        updateStats();
+        aiDecision();
+        updateExpression();
+    }
+
+    setInterval(updateNeeds, 10000);
+    setInterval(updateExpression, 2000);
 
     updateStats();
     updateExpression();
