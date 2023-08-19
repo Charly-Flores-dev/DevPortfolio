@@ -22,12 +22,12 @@
             flex-wrap: wrap;
             width: 160px;
             height: 160px;
-            transform: scale(4);
+            transform: scale(1);
         }
 
         .pixel {
-            width: 20px;
-            height: 20px;
+            width: 10px;
+            height: 10px;
         }
 
         .pixel-black {
@@ -95,66 +95,17 @@
         let happiness = 100;
         let energy = 100;
 
-       
-          const pantherMatrixEmotion = [
-    ["M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M"],
-    ["M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M"],
-    ["M", "M", "E", "E", "M", "M", "M", "E", "E", "M", "M", "E", "E", "M", "M", "M"],
-    ["M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M"],
-    ["M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M"],
-    ["M", "M", "E", "E", "M", "M", "M", "E", "E", "M", "M", "E", "E", "M", "M", "M"],
-    ["M", "M", "M", "M", "E", "E", "E", "M", "M", "E", "E", "M", "M", "M", "M", "M"],
-    ["M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M"],
-    ["M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M"],
-    ["M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M"],
-    ["M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M"],
-    ["M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M"],
-    ["M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M"],
-    ["M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M"],
-    ["M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M"],
-    ["M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M"]
-];
-const pantherMatrixMiddle = [
-    ["M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M"],
-    ["M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M"],
-    ["M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M"],
-    ["M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M"],
-    ["M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M"],
-    ["M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M"],
-    ["M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M"],
-    ["M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M"],
-    ["M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M"],
-    ["M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M"],
-    ["M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M"],
-    ["M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M"],
-    ["M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M"],
-    ["M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M"],
-    ["M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M"],
-    ["M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M"]
-];
+        const pantherMatrixEmotion = [
+            // Matriz de emociones ...
+        ];
 
-    const pantherMatrixHunger = [
-    ["M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M"],
-    ["M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M"],
-    ["M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M"],
-    ["M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M"],
-    ["M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M"],
-    ["M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M"],
-    ["M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M"],
-    ["M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M"],
-    ["M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M"],
-    ["M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M"],
-    ["M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M"],
-    ["M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M"],
-    ["M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M"],
-    ["M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M"],
-    ["M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M"],
-    ["M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M"]
-];
-    
+        const pantherMatrixMiddle = [
+            // Matriz intermedia ...
+        ];
 
-            
-      
+        const pantherMatrixHunger = [
+            // Matriz de hambre ...
+        ];
 
         function updateStats() {
             hungerValue.textContent = hunger;
@@ -163,14 +114,16 @@ const pantherMatrixMiddle = [
         }
 
         function updateExpression() {
-            pantherImage.innerHTML = ""; 
+            pantherImage.innerHTML = "";
 
-            for (let row = 0; row < pantherMatrix.length; row++) {
-                for (let col = 0; col < pantherMatrix[row].length; col++) {
+            const matrix = chooseExpressionMatrix();
+
+            for (let row = 0; row < matrix.length; row++) {
+                for (let col = 0; col < matrix[row].length; col++) {
                     const pixel = document.createElement("div");
                     pixel.className = "pixel";
 
-                    switch (pantherMatrix[row][col]) {
+                    switch (matrix[row][col]) {
                         case "E":
                             if (happiness > 70) {
                                 pixel.classList.add("pixel-light-grey");
@@ -202,6 +155,16 @@ const pantherMatrixMiddle = [
 
                     pantherImage.appendChild(pixel);
                 }
+            }
+        }
+
+        function chooseExpressionMatrix() {
+            if (hunger < 30) {
+                return pantherMatrixHunger;
+            } else if (happiness < 30) {
+                return pantherMatrixEmotion;
+            } else {
+                return pantherMatrixMiddle;
             }
         }
 
@@ -264,8 +227,8 @@ const pantherMatrixMiddle = [
         playButton.addEventListener("click", play);
         sleepButton.addEventListener("click", sleep);
 
-        setInterval(updateNeeds, 10000); 
-        setInterval(updateExpression, 2000); 
+        setInterval(updateNeeds, 10000);
+        setInterval(updateExpression, 2000);
 
         updateStats();
         updateExpression();
