@@ -28,6 +28,7 @@
         .pixel {
             width: 10px;
             height: 10px;
+            transition: background-color 0.3s ease; /* Transición suave */
         }
 
         .pixel-black {
@@ -95,6 +96,7 @@
         let happiness = 100;
         let energy = 100;
 
+
           const pantherMatrixEmotion = [
     ["M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M"],
     ["M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M", "M"],
@@ -159,46 +161,43 @@ const pantherMatrixMiddle = [
         }
 
         function updateExpression() {
-            pantherImage.innerHTML = "";
-
             const matrix = chooseExpressionMatrix();
+            const pixels = pantherImage.querySelectorAll(".pixel");
 
-            for (let row = 0; row < matrix.length; row++) {
-                for (let col = 0; col < matrix[row].length; col++) {
-                    const pixel = document.createElement("div");
-                    pixel.className = "pixel";
+            for (let i = 0; i < matrix.length; i++) {
+                for (let j = 0; j < matrix[i].length; j++) {
+                    const pixelIndex = i * matrix[i].length + j;
+                    const pixel = pixels[pixelIndex];
 
-                    switch (matrix[row][col]) {
+                    switch (matrix[i][j]) {
                         case "E":
                             if (happiness > 70) {
-                                pixel.classList.add("pixel-light-grey");
+                                pixel.className = "pixel pixel-light-grey";
                             } else if (happiness < 30) {
-                                pixel.classList.add("pixel-dark-grey");
+                                pixel.className = "pixel pixel-dark-grey";
                             } else {
-                                pixel.classList.add("pixel-grey");
+                                pixel.className = "pixel pixel-grey";
                             }
                             break;
                         case "M":
                             if (happiness > 70) {
-                                pixel.classList.add("pixel-dark-grey");
+                                pixel.className = "pixel pixel-dark-grey";
                             } else if (happiness < 30) {
-                                pixel.classList.add("pixel-black");
+                                pixel.className = "pixel pixel-black";
                             } else {
-                                pixel.classList.add("pixel-grey");
+                                pixel.className = "pixel pixel-grey";
                             }
                             break;
                         case "H":
                             if (happiness > 70) {
-                                pixel.classList.add("pixel-light-grey");
+                                pixel.className = "pixel pixel-light-grey";
                             } else if (happiness < 30) {
-                                pixel.classList.add("pixel-dark-grey");
+                                pixel.className = "pixel pixel-dark-grey";
                             } else {
-                                pixel.classList.add("pixel-grey");
+                                pixel.className = "pixel pixel-grey";
                             }
                             break;
                     }
-
-                    pantherImage.appendChild(pixel);
                 }
             }
         }
