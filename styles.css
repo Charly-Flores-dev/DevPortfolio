@@ -438,7 +438,7 @@ button:hover {
       cursor: pointer;
       overflow: hidden;
     }
-button2,button2::after {
+button,button::after {
   padding: 10px 50px;
   font-size: 20px;
   border: none;
@@ -448,7 +448,7 @@ button2,button2::after {
   position: relative;
 }
 
-button2::after {
+button::after {
   --move1: inset(50% 50% 50% 50%);
   --move2: inset(31% 0 40% 0);
   --move3: inset(39% 0 15% 0);
@@ -465,7 +465,7 @@ button2::after {
   display: block;
 }
 
-button2:hover::after {
+button:hover::after {
   animation: glitch_4011 1s;
   text-shadow: 10 10px 10px black;
   animation-timing-function: steps(2, end);
@@ -474,11 +474,11 @@ button2:hover::after {
   border: 3px solid rgb(0, 255, 213);
 }
 
-button2:hover {
+button:hover {
   text-shadow: -1px -1px 0px #1df2f0, 1px 1px 0px #E94BE8;
 }
 
-button2:hover {
+button:hover {
   background-color: transparent;
   border: 1px solid rgb(0, 255, 213);
   box-shadow: 0px 10px 10px -10px rgb(0, 255, 213);
