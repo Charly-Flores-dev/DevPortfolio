@@ -347,73 +347,6 @@ nav {
   margin-right: auto;
 }
 
-.boton {
-  display: inline-block;
-  background-color: #333;
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  text-align: center;
-  margin-top: 20px;
-}
-
-
-.boton:hover {
-  background-color: #fff;
-  color: #333;
-}
-
-.inicio a.boton {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #333;
-  color: #fff;
-  text-decoration: none;
-  font-size: 16px;
-  border-radius: 5px;
-}
-
-.inicio a.boton:hover {
-  background-color: #555;
-}
-
-.inicio a.boton:hover {
-  background-color: #555;
-}
-
-.inicio .cv-icon {
-  margin-top: 30px;
-  cursor: pointer;
-  transition: transform 0.3s ease;
- 
-}
-
-.inicio .cv-icon img {
-  width: 45px;
-}
-
-.inicio .message {
-  display: none;
-  position: absolute;
-  top: -30px;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 5px 10px;
-  background-color: #333;
-  color: #fff;
-  border-radius: 5px;
-}
-
-.inicio .cv-icon:hover {
-  transform: matrix(0, 1, 1, 0, 0, 0);
-}
-
-.inicio .cv-icon:hover + .message {
-  display: block;
-}
-
 .glitch-button {
       padding: 10px 50px;
       font-size: 20px;
@@ -527,6 +460,41 @@ button:hover {
     transform: translate(0);
   }
 }
+
+
+
+.inicio .cv-icon {
+  margin-top: 30px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+ 
+}
+
+.inicio .cv-icon img {
+  width: 45px;
+}
+
+.inicio .message {
+  display: none;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 5px 10px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.inicio .cv-icon:hover {
+  transform: matrix(0, 1, 1, 0, 0, 0);
+}
+
+.inicio .cv-icon:hover + .message {
+  display: block;
+}
+
+
 
   
 
