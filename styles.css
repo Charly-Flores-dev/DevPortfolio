@@ -589,32 +589,105 @@ button:hover {
 
 
 
+/* Projects Section */
 
-/* Section "About" */
-.about {
-padding: 100px 0;
-background-color: #f7f7f7;
+.projects {
+margin: 0 auto;
+background-color: #f2f2f2;
+padding: 30px;
+text-align: center;
+overflow: hidden; 
 }
 
-.about .content {
-max-width: 800px;
-margin: auto;
+.projects .content {
+max-width: 1260px;
+margin: 0 auto;
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+grid-gap: 30px;
+margin-top: 30px;
 text-align: center;
 }
 
-.about h2 {
-font-size: 36px;
+.projects h2 {
+font-size: 32px;
 margin-bottom: 20px;
+text-align: center;
 }
 
-.about p {
-font-size: 20px;
-margin-bottom: 20px;
-line-height: 1.6;
+.projects .project img {
+width: 100%;
+height: 100px;
+object-fit: cover;
+}
+/* Styles for the "Practices" section */
+.practices {
+background-color: #f2f2f2;
+padding: 50px;
+text-align: center;
+overflow: hidden; / Adding overflow to prevent overflowing content */
 }
 
+.practices h2 {
+font-size: 32px;
+margin-bottom: 20px;
+text-align: center;
+}
 
-  
+.practices p {
+font-size: 16px;
+line-height: 1.5;
+}
+
+.practices .content {
+max-width: 1260px;
+margin: 0 auto;
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+grid-gap: 30px;
+margin-top: 30px;
+text-align: center;
+}
+
+.practices img {
+width: 100%;
+height: 100px;
+object-fit: cover;
+}
+
+/* Styles for the "Game" section */
+.game {
+background-color: #f2f2f2;
+padding: 50px;
+text-align: center;
+overflow: hidden; / Adding overflow to prevent overflowing content */
+}
+
+.game h2 {
+font-size: 32px;
+margin-bottom: 20px;
+text-align: center;
+}
+
+.game p {
+font-size: 16px;
+line-height: 1.5;
+}
+
+.game .content {
+max-width: 1260px;
+margin: 0 auto;
+display: grid;
+grid-gap: 30px;
+margin-top: 30px;
+text-align: center;
+}
+
+.game img {
+width: 220px;
+height: 270px;
+object-fit: cover;
+}
 
 /* Section "Skills" */
 .animated-words span {
@@ -721,106 +794,6 @@ width: 60%;
 
 .percentage[data-percentage="30"] {
 width: 30%;
-}
-
-/* Projects Section */
-
-.projects {
-margin: 0 auto;
-background-color: #f2f2f2;
-padding: 30px;
-text-align: center;
-overflow: hidden; 
-}
-
-.projects .content {
-max-width: 1260px;
-margin: 0 auto;
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-grid-gap: 30px;
-margin-top: 30px;
-text-align: center;
-}
-
-.projects h2 {
-font-size: 32px;
-margin-bottom: 20px;
-text-align: center;
-}
-
-.projects .project img {
-width: 100%;
-height: 100px;
-object-fit: cover;
-}
-/* Styles for the "Practices" section */
-.practices {
-background-color: #f2f2f2;
-padding: 50px;
-text-align: center;
-overflow: hidden; / Adding overflow to prevent overflowing content */
-}
-
-.practices h2 {
-font-size: 32px;
-margin-bottom: 20px;
-text-align: center;
-}
-
-.practices p {
-font-size: 16px;
-line-height: 1.5;
-}
-
-.practices .content {
-max-width: 1260px;
-margin: 0 auto;
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-grid-gap: 30px;
-margin-top: 30px;
-text-align: center;
-}
-
-.practices img {
-width: 100%;
-height: 100px;
-object-fit: cover;
-}
-
-/* Styles for the "Game" section */
-.game {
-background-color: #f2f2f2;
-padding: 50px;
-text-align: center;
-overflow: hidden; / Adding overflow to prevent overflowing content */
-}
-
-.game h2 {
-font-size: 32px;
-margin-bottom: 20px;
-text-align: center;
-}
-
-.game p {
-font-size: 16px;
-line-height: 1.5;
-}
-
-.game .content {
-max-width: 1260px;
-margin: 0 auto;
-display: grid;
-grid-gap: 30px;
-margin-top: 30px;
-text-align: center;
-}
-
-.game img {
-width: 220px;
-height: 270px;
-object-fit: cover;
 }
 
 /* Contact Section */
