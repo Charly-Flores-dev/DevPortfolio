@@ -351,6 +351,7 @@ nav {
 
 
 .glitch-button {
+      z-index: 2;
       padding: 10px 50px;
       font-size: 20px;
       border: none;
@@ -466,6 +467,7 @@ button:hover {
 
 
 .cv-icon {
+  z-index: 1;
   margin-top: 30px;
   cursor: pointer;
   transition: transform 0.3s ease;
