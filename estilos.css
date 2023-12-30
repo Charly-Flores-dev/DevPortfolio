@@ -148,6 +148,8 @@ nav {
 	#menu-toggle {
 	display: none;
 }
+
+	
 .iinicio,
 	.inicio h1,
 	.inicio p,
@@ -346,6 +348,12 @@ nav {
   margin-left: auto;
   margin-right: auto;
 }
+.botones-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
 
 .glitch-button {
       padding: 10px 50px;
@@ -461,20 +469,22 @@ button:hover {
   }
 }
 
+.cv-icon-container {
+  margin-left: 20px; /* Ajusta el margen según tu diseño */
+}
 
-
-.inicio .cv-icon {
+.cv-icon {
   margin-top: 30px;
   cursor: pointer;
   transition: transform 0.3s ease;
  
 }
 
-.inicio .cv-icon img {
+ .cv-icon img {
   width: 45px;
 }
 
-.inicio .message {
+.message {
   display: none;
   position: absolute;
   top: -30px;
@@ -486,11 +496,11 @@ button:hover {
   border-radius: 5px;
 }
 
-.inicio .cv-icon:hover {
+.cv-icon:hover {
   transform: matrix(0, 1, 1, 0, 0, 0);
 }
 
-.inicio .cv-icon:hover + .message {
+.cv-icon:hover + .message {
   display: block;
 }
 
