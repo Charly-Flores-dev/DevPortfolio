@@ -493,7 +493,7 @@ nav {
   --move5: inset(45% 0 6% 0);
   --move6: inset(14% 0 61% 0);
   clip-path: var(--move1);
-  content: '';
+  content: '''''';
   position: absolute;
   top: 0;
   left: 0;
