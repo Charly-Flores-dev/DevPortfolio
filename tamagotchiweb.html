@@ -1,189 +1,245 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Tamagotchi de Pantera</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f0f0f0;
-            margin: 0;
-            padding: 0;
-        }
+import React, { useState, useEffect, useCallback } from 'react';
+import { Button } from "@/components/ui/button"
+import { Progress } from "@/components/ui/progress"
+import { Drumstick, Fish, Heart, Zap, Star, VolumeX, Volume2 } from 'lucide-react'
 
-        #game-container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        }
+//
+const audioFiles = {
+  feed: '/feed.mp3',
+  play: '/play.mp3',
+  sleep: '/sleep.mp3',
+  hunt: '/hunt.mp3',
+  growth: '/growth.mp3'
+};
 
-        .panther {
-            background-image: url('https://th.bing.com/th/id/R.c9c4abb603affbf2b3a09e8fd866a0a2?rik=4C81%2b2DZgidCPg&riu=http%3a%2f%2fwww.100pies.net%2fgifs%2fAnimales%2fPanteras%2fpantera10.gif&ehk=9xpXGQSoD5BuqQ%2b%2fEs7%2f1%2bwPSLSpd2bWOiPgQT91l4U%3d&risl=&pid=ImgRaw&r=0');
-            background-size: cover;
-            width: 200px;
-            height: 200px;
-            margin: 0 auto;
-        }
+export default function Component() {
+  const [hunger, setHunger] = useState(100);
+  const [happiness, setHappiness] = useState(100);
+  const [energy, setEnergy] = useState(100);
+  const [isHunting, setIsHunting] = useState(false);
+  const [prey, setPrey] = useState(0);
+  const [level, setLevel] = useState(1);
+  const [exp, setExp] = useState(0);
+  const [gameType, setGameType] = useState('');
+  const [gameScore, setGameScore] = useState(0);
+  const [gameTime, setGameTime] = useState(10);
+  const [isMuted, setIsMuted] = useState(false);
 
-        #stats {
-            margin-top: 20px;
-        }
+  const playAudio = useCallback((audioKey) => {
+    if (!isMuted) {
+      const audio = new Audio(audioFiles[audioKey]);
+      audio.play().catch(error => console.error('Error playing audio:', error));
+    }
+  }, [isMuted]);
 
-        #buttons {
-            margin-top: 20px;
-        }
+  useEffect(() => {
+    const savedState = localStorage.getItem('blackPantherState');
+    if (savedState) {
+      const { hunger, happiness, energy, prey, level, exp } = JSON.parse(savedState);
+      setHunger(hunger);
+      setHappiness(happiness);
+      setEnergy(energy);
+      setPrey(prey);
+      setLevel(level);
+      setExp(exp);
+    }
 
-        .message {
-            display: none;
-            font-style: italic;
-            color: #555;
-            margin-top: 10px;
-        }
-    </style>
-</head>
-<body>
-    <div id="game-container">
-        <h1>Tamagotchi de Pantera</h1>
-        <div id="panther-image" class="panther"></div>
-        <div id="stats">
-            <p id="hunger">Hambre: <span id="hunger-value">100</span></p>
-            <p id="happiness">Felicidad: <span id="happiness-value">100</span></p>
-            <p id="energy">Energía: <span id="energy-value">100</span></p>
+    const timer = setInterval(() => {
+      setHunger(prev => Math.max(prev - 1, 0));
+      setHappiness(prev => Math.max(prev - 0.5, 0));
+      setEnergy(prev => Math.max(prev - 0.7, 0));
+      if (isHunting) {
+        setPrey(prev => prev + 1);
+        setEnergy(prev => Math.max(prev - 2, 0));
+        setExp(prev => prev + 2);
+      }
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, [isHunting]);
+
+  useEffect(() => {
+    const state = { hunger, happiness, energy, prey, level, exp };
+    localStorage.setItem('blackPantherState', JSON.stringify(state));
+  }, [hunger, happiness, energy, prey, level, exp]);
+
+  useEffect(() => {
+    if (exp >= level * 100) {
+      setLevel(prev => prev + 1);
+      setExp(0);
+      playAudio('growth');
+    }
+  }, [exp, level, playAudio]);
+
+  const feed = () => {
+    setHunger(prev => Math.min(prev + 20, 100));
+    setPrey(prev => Math.max(prev - 1, 0));
+    playAudio('feed');
+  };
+
+  const play = () => {
+    setHappiness(prev => Math.min(prev + 20, 100));
+    playAudio('play');
+  };
+
+  const sleep = () => {
+    setEnergy(prev => Math.min(prev + 20, 100));
+    playAudio('sleep');
+  };
+
+  const toggleHunt = () => {
+    setIsHunting(prev => !prev);
+    playAudio('hunt');
+  };
+
+  const startGame = (type) => {
+    setGameType(type);
+    setGameScore(0);
+    setGameTime(10);
+  };
+
+  const playStalkGame = () => {
+    setGameScore(prev => prev + 1);
+    setHappiness(prev => Math.min(prev + 1, 100));
+  };
+
+  const playClimbGame = (height) => {
+    setGameScore(prev => prev + height);
+    setHappiness(prev => Math.min(prev + 2, 100));
+  };
+
+  const endGame = () => {
+    setGameType('');
+    setPrey(prev => prev + Math.floor(gameScore / 2));
+    setExp(prev => prev + gameScore);
+  };
+
+  useEffect(() => {
+    let timer;
+    if (gameType && gameTime > 0) {
+      timer = setInterval(() => {
+        setGameTime(prev => prev - 1);
+      }, 1000);
+    } else if (gameTime === 0) {
+      endGame();
+    }
+    return () => clearInterval(timer);
+  }, [gameType, gameTime]);
+
+  const toggleMute = () => {
+    setIsMuted(prev => !prev);
+  };
+
+  const getPantherStage = () => {
+    if (level <= 3) return 'Cub';
+    if (level <= 6) return 'Young';
+    if (level <= 9) return 'Adult';
+    return 'Elder';
+  };
+
+  return (
+    <div className="flex flex-col items-center p-4 bg-gray-800 text-white rounded-lg shadow-lg max-w-sm mx-auto">
+      <h1 className="text-2xl font-bold mb-4">Black Panther Tamagotchi</h1>
+      
+      {/* Panther character */}
+      <div className={`w-48 h-48 relative mb-4 ${isHunting ? 'animate-pulse' : ''}`}>
+        {/* Body */}
+        <div className="absolute inset-0 bg-black rounded-full"></div>
+        {/* Eyes */}
+        <div className="absolute top-1/4 left-1/4 w-4 h-4 bg-yellow-400 rounded-full"></div>
+        <div className="absolute top-1/4 right-1/4 w-4 h-4 bg-yellow-400 rounded-full"></div>
+        {/* Nose */}
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-pink-300 rounded-full"></div>
+        {/* Mouth */}
+        <div className={`absolute bottom-1/3 left-1/2 transform -translate-x-1/2 w-8 h-1 bg-pink-300 rounded-full ${happiness > 50 ? 'rounded-t-full' : 'rounded-b-full'}`}></div>
+        {/* Ears */}
+        <div className="absolute top-0 left-1/4 w-6 h-6 bg-black rounded-full transform -translate-y-1/2 rotate-45"></div>
+        <div className="absolute top-0 right-1/4 w-6 h-6 bg-black rounded-full transform -translate-y-1/2 -rotate-45"></div>
+        {/* Fangs (only for adult and elder) */}
+        {level > 6 && (
+          <>
+            <div className="absolute bottom-1/3 left-[45%] w-1 h-2 bg-white rounded-b-full"></div>
+            <div className="absolute bottom-1/3 right-[45%] w-1 h-2 bg-white rounded-b-full"></div>
+          </>
+        )}
+        {/* Claws (only for adult and elder) */}
+        {level > 6 && (
+          <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 flex space-x-1">
+            <div className="w-1 h-2 bg-gray-300 rounded-b-full"></div>
+            <div className="w-1 h-2 bg-gray-300 rounded-b-full"></div>
+            <div className="w-1 h-2 bg-gray-300 rounded-b-full"></div>
+          </div>
+        )}
+      </div>
+
+      <p className="text-lg font-semibold mb-2">{getPantherStage()} Panther</p>
+
+      {/* Stats */}
+      <div className="w-full space-y-2 mb-4">
+        <div className="flex items-center">
+          <Drumstick className="mr-2" />
+          <Progress value={hunger} className="flex-grow" />
         </div>
-        <div id="buttons">
-            <button id="feed-button">Alimentar</button>
-            <button id="play-button">Jugar</button>
-            <button id="sleep-button">Dormir</button>
+        <div className="flex items-center">
+          <Heart className="mr-2" />
+          <Progress value={happiness} className="flex-grow" />
         </div>
-        <div id="message-feed" class="message">¡Gracias por alimentarme!</div>
-        <div id="message-play" class="message">¡Me encanta jugar contigo!</div>
-        <div id="message-sleep" class="message">¡Necesito descansar!</div>
+        <div className="flex items-center">
+          <Zap className="mr-2" />
+          <Progress value={energy} className="flex-grow" />
+        </div>
+      </div>
+
+      {/* Level and Exp */}
+      <div className="mb-4 text-center">
+        <Star className="inline mr-2" />
+        <span>Level {level} - EXP: {exp}/{level * 100}</span>
+      </div>
+
+      {/* Controls */}
+      <div className="flex flex-wrap justify-center gap-2 mb-4">
+        <Button onClick={feed} disabled={hunger === 100 || prey === 0}>Feed</Button>
+        <Button onClick={play} disabled={happiness === 100}>Play</Button>
+        <Button onClick={sleep} disabled={energy === 100}>Sleep</Button>
+        <Button onClick={toggleHunt}>{isHunting ? 'Stop Hunting' : 'Hunt'}</Button>
+      </div>
+
+      {/* Prey */}
+      <div className="mb-4">
+        <Fish className="inline mr-2" />
+        <span>{prey} prey</span>
+      </div>
+
+      {/* Mini-games */}
+      {!gameType ? (
+        <div className="flex flex-wrap justify-center gap-2">
+          <Button onClick={() => startGame('stalk')}>Stalking Game</Button>
+          <Button onClick={() => startGame('climb')}>Climbing Game</Button>
+        </div>
+      ) : gameType === 'stalk' ? (
+        <div className="text-center">
+          <p className="mb-2">Stalk your prey! Click to pounce!</p>
+          <p className="mb-2">Score: {gameScore} | Time: {gameTime}s</p>
+          <Button onClick={playStalkGame} className="mb-2">Pounce!</Button>
+        </div>
+      ) : (
+        <div className="text-center">
+          <p className="mb-2">Climb as high as you can!</p>
+          <p className="mb-2">Score: {gameScore} | Time: {gameTime}s</p>
+          <div className="grid grid-cols-2 gap-2">
+            {[1, 2, 3, 4].map((height) => (
+              <Button key={height} onClick={() => playClimbGame(height)}>
+                {height} m
+              </Button>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Mute button */}
+      <Button onClick={toggleMute} className="mt-4">
+        {isMuted ? <VolumeX /> : <Volume2 />}
+      </Button>
     </div>
-
-    <script>
-        // Variables para el estado del tamagotchi
-        let hunger = 100;
-        let happiness = 100;
-        let energy = 100;
-
-        // Matrices de expresiones
-        let pantherMatrixNeutral = [
-            [-20, 0, 20],
-            [0, 100, 0],
-            [0, 0, 0]
-        ];
-
-        let pantherMatrixHunger = [
-            [50, 0, -50],
-            [0, 100, 0],
-            [-20, 0, 20]
-        ];
-
-        let pantherMatrixSad = [
-            [-50, 0, 50],
-            [0, 50, 0],
-            [0, 0, 0]
-        ];
-
-        // Función para actualizar la matriz de expresiones
-        function updateExpressionMatrix() {
-            let expressionMatrix;
-
-            if (hunger < 30) {
-                expressionMatrix = pantherMatrixHunger;
-            } else if (happiness < 30) {
-                expressionMatrix = pantherMatrixSad;
-            } else {
-                expressionMatrix = pantherMatrixNeutral;
-            }
-
-            return expressionMatrix;
-        }
-
-        // Función para actualizar la expresión de la pantera
-        function updatePantherExpression() {
-            let expressionMatrix = updateExpressionMatrix();
-            let pantherImage = document.getElementById('panther-image');
-
-            let matrixString = '';
-            for (let i = 0; i < expressionMatrix.length; i++) {
-                for (let j = 0; j < expressionMatrix[i].length; j++) {
-                    matrixString += expressionMatrix[i][j] + ' ';
-                }
-                matrixString += '\n';
-            }
-
-            pantherImage.style.transform = 'matrix3d(' + matrixString + ')';
-        }
-
-        // Función para mostrar un mensaje y luego ocultarlo
-        function showMessage(messageId) {
-            let messageElement = document.getElementById(messageId);
-            messageElement.style.display = 'block';
-            setTimeout(function() {
-                messageElement.style.display = 'none';
-            }, 2000);
-        }
-
-        // Función para alimentar al tamagotchi
-        function feed() {
-            if (hunger < 90) {
-                hunger += 10;
-            } else {
-                hunger = 100;
-            }
-            updateStats();
-            updatePantherExpression();
-            showMessage('message-feed');
-        }
-
-        // Función para jugar con el tamagotchi
-        function play() {
-            if (happiness < 90) {
-                happiness += 10;
-            } else {
-                happiness = 100;
-            }
-            if (energy > 10) {
-                energy -= 10;
-            } else {
-                energy = 0;
-            }
-            updateStats();
-            updatePantherExpression();
-            showMessage('message-play');
-        }
-
-        // Función para hacer que el tamagotchi duerma
-        function sleep() {
-            if (energy < 90) {
-                energy += 10;
-            } else {
-                energy = 100;
-            }
-            updateStats();
-            updatePantherExpression();
-            showMessage('message-sleep');
-        }
-
-        // Función para actualizar las estadísticas en la página
-        function updateStats() {
-            document.getElementById('hunger-value').textContent = hunger;
-            document.getElementById('happiness-value').textContent = happiness;
-            document.getElementById('energy-value').textContent = energy;
-        }
-
-        // Asignar funciones a los botones
-        document.getElementById('feed-button').addEventListener('click', feed);
-        document.getElementById('play-button').addEventListener('click', play);
-        document.getElementById('sleep-button').addEventListener('click', sleep);
-
-        // Inicialización
-        updateStats();
-        updatePantherExpression();
-    </script>
-</body>
-</html>
+  );
+}
