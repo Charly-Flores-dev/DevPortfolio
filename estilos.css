@@ -492,7 +492,7 @@ nav {
   --move4: inset(45% 0 40% 0);
   --move5: inset(45% 0 6% 0);
   --move6: inset(14% 0 61% 0);
-  clip-path: var(--move1);
+  clip-path: var(--move2);
   content: '''CV''';
   position: absolute;
   top: 0;
