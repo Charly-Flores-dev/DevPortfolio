@@ -354,6 +354,7 @@ nav {
 .glitch-button {
       z-index: 2;
       padding: 10px 50px;
+      margin-bottom: 10px;	
       font-size: 20px;
       border: 2px solid rgb(0, 255, 213);	
       border-radius: 5px;
