@@ -354,7 +354,7 @@ nav {
       z-index: 2;
       padding: 10px 50px;
       font-size: 20px;
-      border-style: groove;	
+      border: 2px solid rgb(0, 255, 213);	
       border-radius: 5px;
       color: white;
       background-color: transparent;
@@ -469,7 +469,7 @@ nav {
  .glitch-buttoncv-icon {
       padding: 10px 50px;
       font-size: 20px;
-      border: 3px solid rgb(0, 255, 213);
+      border: 2px solid rgb(0, 255, 213);
       border-radius: 5px;
       color: white;
       background-color: transparent;
